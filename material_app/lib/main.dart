@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './widgets/center_widget.dart';
-// import './widgets/scaffold_widget.dart';
+import './widgets/scaffold_widget.dart';
 
 //as every programming language execution starts from main()
 void main() => runApp(MyApp());
@@ -23,12 +22,12 @@ class MyApp extends StatelessWidget {
       ),
 
       //our app will be loaded from here
-      home: CenterWidget(),
+      home: ScaffoldWidget(),
 
       //routes to different screens
       routes: {
-        '/center-widget': (context) =>
-            CenterWidget(), //if home not specified app will start from here
+        '/scaffold-widget': (context) =>
+            ScaffoldWidget(), //if home not specified app will start from here
       },
     );
   }
