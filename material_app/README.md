@@ -1,6 +1,17 @@
-# material_app
+# Example Apps built for exploring Flutter
+by [Flutter Coders](https://www.instagram.com/flutter_coders/)
 
-A new Flutter project.
+# Some Screenshots:
+![ss1](https://github.com/madhavtripathi05/Flutter-Examples/blob/master/material_app/flutter_01.png "Scaffold Demo1")
+![ss2](https://github.com/madhavtripathi05/Flutter-Examples/blob/master/material_app/flutter_02.png "Scaffold Demo2")
+![ss3](https://github.com/madhavtripathi05/Flutter-Examples/blob/master/material_app/flutter_03.png "Scaffold Demo3")
+
+![ss5][ss5]
+
+[ss5]:https://imgur.com/T5XD9hl "Scaffold Demo5"
+
+# List of Widgets Explored
+
 
 ## Getting Started
 
