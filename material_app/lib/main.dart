@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import './widgets/row_column.dart';
 import './widgets/scaffold_widget.dart';
 
 //as every programming language execution starts from main()
@@ -26,8 +27,9 @@ class MyApp extends StatelessWidget {
 
       //routes to different screens
       routes: {
-        '/scaffold-widget': (context) =>
-            ScaffoldWidget(), //if home not specified app will start from here
+        /*if home not specified app will start from here*/
+        ScaffoldWidget.routeName: (context) => ScaffoldWidget(),
+        RowColumn.routeName: (context) => RowColumn(),
       },
     );
   }

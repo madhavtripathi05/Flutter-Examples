@@ -2,7 +2,10 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
+import '../widgets/row_column.dart';
+
 class ScaffoldWidget extends StatefulWidget {
+  static const routeName = '/scaffold-widget';
   @override
   _ScaffoldWidgetState createState() => _ScaffoldWidgetState();
 }
@@ -66,6 +69,11 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
                 leading: Icon(Icons.check_circle_outline, color: myColor),
                 onTap: () => print('option $i pressed'),
               ),
+            FlatButton(
+              onPressed: () =>
+                  Navigator.pushNamed(context, RowColumn.routeName),
+              child: Text('Go to next page'),
+            ),
           ],
         ),
       ),
@@ -75,14 +83,17 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
           CircleAvatar(
             radius: 20,
             backgroundColor: myColor,
-            child: Icon(
-              Icons.account_circle,
-              color: Colors.white
-            ),
+            child: Icon(Icons.account_circle, color: Colors.white),
           ),
-          ListTile(title: Text('Name'),),
-          ListTile(title: Text('Account details'),),
-          ListTile(title: Text('Settings'),),
+          ListTile(
+            title: Text('Name'),
+          ),
+          ListTile(
+            title: Text('Account details'),
+          ),
+          ListTile(
+            title: Text('Settings'),
+          ),
         ]),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -93,7 +104,6 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
         tooltip: 'tap me to change color of appBar',
         child: Icon(Icons.refresh),
         backgroundColor: myColor,
-        
       ),
       //add this when you want buttons in footer area like a send button in chat,
       persistentFooterButtons: <Widget>[
