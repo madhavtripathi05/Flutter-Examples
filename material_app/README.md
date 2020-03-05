@@ -2,15 +2,21 @@
 by [Flutter Coders](https://www.instagram.com/flutter_coders/)
 
 # Some Screenshots:
-<img src="https://github.com/madhavtripathi05/Flutter-Examples/blob/master/material_app/flutter_01.png" width="368" height="800" />
-<img src="https://github.com/madhavtripathi05/Flutter-Examples/blob/master/material_app/flutter_02.png" width="368" height="800" />
-<img src="https://github.com/madhavtripathi05/Flutter-Examples/blob/master/material_app/flutter_03.png" width="368" height="800" />
+<img src="https://github.com/madhavtripathi05/Flutter-Examples/blob/master/material_app/screenshots/flutter_01.png" width="368" height="800" />
+<img src="https://github.com/madhavtripathi05/Flutter-Examples/blob/master/material_app/screenshots/flutter_02.png" width="368" height="800" />
+<img src="https://github.com/madhavtripathi05/Flutter-Examples/blob/master/material_app/screenshots/flutter_03.png" width="368" height="800" />
 
 ![ss5 gif][ss5]
 
-[ss5]:https://github.com/madhavtripathi05/Flutter-Examples/blob/master/material_app/scaffold_example.gif "Scaffold Demo5"
+[ss5]:https://github.com/madhavtripathi05/Flutter-Examples/blob/master/material_app/screenshots/scaffold_example.gif "Scaffold Demo5"
 
 # List of Widgets Explored
+
+- [x] BottomNavigationBar
+- [x] Card
+- [x] CircleAvatar
+- [x] Column
+- [x] Row
 - [x] Scaffold
 
 ## Getting Started
