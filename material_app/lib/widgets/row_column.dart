@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 
-class RowColumn extends StatefulWidget {
-  static const routeName = '/row-column';
-  @override
-  RowColumnState createState() => RowColumnState();
-}
-
-class RowColumnState extends State<RowColumn> {
+class RowColumn extends StatelessWidget{
+  static const routeName = 'row-column';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +29,7 @@ class RowColumnState extends State<RowColumn> {
                 Text('Designation: SDE2', style: TextStyle(fontSize: 20)),
               ]),
           elevation: 10,
-          margin: EdgeInsets.only(top: 200, right: 50, bottom: 200, left: 50),
+          margin: EdgeInsets.symmetric(vertical:200,horizontal:50),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         ),

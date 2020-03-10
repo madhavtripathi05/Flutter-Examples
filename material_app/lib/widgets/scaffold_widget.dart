@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:material_app/widgets/stack_widget.dart';
 
 import '../widgets/row_column.dart';
 
@@ -67,7 +68,8 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
               ListTile(
                 title: Text('Option $i'),
                 leading: Icon(Icons.check_circle_outline, color: myColor),
-                onTap: () => print('option $i pressed'),
+                onTap: () => 
+                  Navigator.pushNamed(context, StackWidget.routeName),
               ),
             FlatButton(
               onPressed: () =>
@@ -125,6 +127,7 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
       ],
       bottomNavigationBar: BottomNavigationBar(
           selectedItemColor: myColor,
+
           onTap: (val) {
             setState(() => selectedIndex = val);
             changeColor();

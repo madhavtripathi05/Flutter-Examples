@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:material_app/widgets/stack_widget.dart';
 
 import './widgets/row_column.dart';
 import './widgets/scaffold_widget.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       //theme:
       theme: ThemeData(
         primaryColor: Colors.blue,
-        accentColor: Color(0xff),
+        
       ),
 
       //our app will be loaded from here
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         /*if home not specified app will start from here*/
         ScaffoldWidget.routeName: (context) => ScaffoldWidget(),
         RowColumn.routeName: (context) => RowColumn(),
+        StackWidget.routeName:(context)=>StackWidget(),
       },
     );
   }
