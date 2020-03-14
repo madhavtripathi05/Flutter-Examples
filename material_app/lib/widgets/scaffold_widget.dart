@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:material_app/widgets/sliders_demo.dart';
 import 'package:material_app/widgets/stack_widget.dart';
 
 import '../widgets/row_column.dart';
@@ -52,8 +53,33 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
         ],
       ),
       body: Center(
-        child: Text('Start interacting with different buttons for testing',
-            style: TextStyle(color: myColor)),
+        child: Column(
+          children: <Widget>[
+            Text('Start interacting with different buttons for testing',
+                style: TextStyle(color: myColor)),
+            RaisedButton(
+              color: myColor,
+              textColor: Colors.white,
+              onPressed: () =>
+                  Navigator.pushNamed(context, RowColumn.routeName),
+              child: Text('Row and column'),
+            ),
+            RaisedButton(
+              color: myColor,
+              textColor: Colors.white,
+              onPressed: () =>
+                  Navigator.pushNamed(context, StackWidget.routeName),
+              child: Text('Stack'),
+            ),
+            RaisedButton(
+              color: myColor,
+              textColor: Colors.white,
+              onPressed: () =>
+                  Navigator.pushNamed(context, SlidersDemo.routeName),
+              child: Text('Sliders'),
+            ),
+          ],
+        ),
       ),
       drawer: Drawer(
         child: ListView(
@@ -68,14 +94,10 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
               ListTile(
                 title: Text('Option $i'),
                 leading: Icon(Icons.check_circle_outline, color: myColor),
-                onTap: () => 
-                  Navigator.pushNamed(context, StackWidget.routeName),
+                onTap: () =>
+                    Navigator.pushNamed(context, StackWidget.routeName),
               ),
-            FlatButton(
-              onPressed: () =>
-                  Navigator.pushNamed(context, RowColumn.routeName),
-              child: Text('Go to next page'),
-            ),
+           
           ],
         ),
       ),
@@ -127,7 +149,6 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
       ],
       bottomNavigationBar: BottomNavigationBar(
           selectedItemColor: myColor,
-
           onTap: (val) {
             setState(() => selectedIndex = val);
             changeColor();

@@ -76,13 +76,13 @@ class _StackWidgetState extends State<StackWidget> {
         child: Stack(
           alignment: AlignmentDirectional.center,
           children: <Widget>[
-            // buildAnimation(300, 3), //last element
-            // buildAnimation(200, 2), //middle element
-            // buildAnimation(100, 1), //first element
+            buildAnimation(300, 3), //last element
+            buildAnimation(200, 2), //middle element
+            buildAnimation(100, 1), //first element
             //to see animation comment the following 3 lines and uncomment the above 3 lines
-            coloredContainer(Colors.red, 300, 3), //last element
-            coloredContainer(Colors.green, 200, 2),//middle element
-            coloredContainer(Colors.blue, 100, 1),//first element
+            // coloredContainer(Colors.red, 300, 3), //last element
+            // coloredContainer(Colors.green, 200, 2),//middle element
+            // coloredContainer(Colors.blue, 100, 1),//first element
           ],
         ),
       ),

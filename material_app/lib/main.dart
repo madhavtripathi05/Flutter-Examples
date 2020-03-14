@@ -3,6 +3,7 @@ import 'package:material_app/widgets/stack_widget.dart';
 
 import './widgets/row_column.dart';
 import './widgets/scaffold_widget.dart';
+import './widgets/sliders_demo.dart';
 
 //as every programming language execution starts from main()
 void main() => runApp(MyApp());
@@ -20,7 +21,6 @@ class MyApp extends StatelessWidget {
       //theme:
       theme: ThemeData(
         primaryColor: Colors.blue,
-        
       ),
 
       //our app will be loaded from here
@@ -29,9 +29,10 @@ class MyApp extends StatelessWidget {
       //routes to different screens
       routes: {
         /*if home not specified app will start from here*/
-        ScaffoldWidget.routeName: (context) => ScaffoldWidget(),
         RowColumn.routeName: (context) => RowColumn(),
-        StackWidget.routeName:(context)=>StackWidget(),
+        ScaffoldWidget.routeName: (context) => ScaffoldWidget(),
+        SlidersDemo.routeName: (context) => SlidersDemo(),
+        StackWidget.routeName: (context) => StackWidget(),
       },
     );
   }
