@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:material_app/screens/home_screen.dart';
+import 'package:material_app/screens/screen1.dart';
+import 'package:material_app/screens/screen2.dart';
 import 'package:material_app/widgets/stack_widget.dart';
 
 import './widgets/row_column.dart';
@@ -21,6 +24,7 @@ class MyApp extends StatelessWidget {
       //theme:
       theme: ThemeData(
         primaryColor: Colors.blue,
+        fontFamily: 'google'
       ),
 
       //our app will be loaded from here
@@ -29,8 +33,11 @@ class MyApp extends StatelessWidget {
       //routes to different screens
       routes: {
         /*if home not specified app will start from here*/
+        HomeScreen.routeName: (context) => HomeScreen(),
         RowColumn.routeName: (context) => RowColumn(),
         ScaffoldWidget.routeName: (context) => ScaffoldWidget(),
+        Screen1.routeName: (context) => Screen1(),
+        Screen2.routeName: (context) => Screen2(),
         SlidersDemo.routeName: (context) => SlidersDemo(),
         StackWidget.routeName: (context) => StackWidget(),
       },

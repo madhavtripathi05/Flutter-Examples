@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:material_app/screens/home_screen.dart';
 import 'package:material_app/widgets/sliders_demo.dart';
 import 'package:material_app/widgets/stack_widget.dart';
 
@@ -61,6 +62,13 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
               color: myColor,
               textColor: Colors.white,
               onPressed: () =>
+                  Navigator.pushNamed(context, HomeScreen.routeName),
+              child: Text('Navigation Demo'),
+            ),
+            RaisedButton(
+              color: myColor,
+              textColor: Colors.white,
+              onPressed: () =>
                   Navigator.pushNamed(context, RowColumn.routeName),
               child: Text('Row and column'),
             ),
@@ -97,7 +105,6 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
                 onTap: () =>
                     Navigator.pushNamed(context, StackWidget.routeName),
               ),
-           
           ],
         ),
       ),
