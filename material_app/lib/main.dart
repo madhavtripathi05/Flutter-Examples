@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:material_app/screens/home_screen.dart';
-import 'package:material_app/screens/screen1.dart';
-import 'package:material_app/screens/screen2.dart';
-import 'package:material_app/widgets/stack_widget.dart';
 
+import './screens/home_screen.dart';
+import './screens/screen1.dart';
+import './screens/screen2.dart';
+
+import './widgets/buttons_demo.dart';
 import './widgets/row_column.dart';
 import './widgets/scaffold_widget.dart';
 import './widgets/sliders_demo.dart';
+import './widgets/stack_widget.dart';
 
 //as every programming language execution starts from main()
 void main() => runApp(MyApp());
@@ -22,10 +24,7 @@ class MyApp extends StatelessWidget {
       title: 'Sample App',
 
       //theme:
-      theme: ThemeData(
-        primaryColor: Colors.blue,
-        fontFamily: 'google'
-      ),
+      theme: ThemeData(primaryColor: Colors.blue, fontFamily: 'google'),
 
       //our app will be loaded from here
       home: ScaffoldWidget(),
@@ -33,6 +32,7 @@ class MyApp extends StatelessWidget {
       //routes to different screens
       routes: {
         /*if home not specified app will start from here*/
+        ButtonsDemo.routeName: (context) => ButtonsDemo(),
         HomeScreen.routeName: (context) => HomeScreen(),
         RowColumn.routeName: (context) => RowColumn(),
         ScaffoldWidget.routeName: (context) => ScaffoldWidget(),

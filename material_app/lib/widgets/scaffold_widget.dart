@@ -6,6 +6,7 @@ import 'package:material_app/widgets/sliders_demo.dart';
 import 'package:material_app/widgets/stack_widget.dart';
 
 import '../widgets/row_column.dart';
+import 'buttons_demo.dart';
 
 class ScaffoldWidget extends StatefulWidget {
   static const routeName = '/scaffold-widget';
@@ -85,6 +86,13 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
               onPressed: () =>
                   Navigator.pushNamed(context, SlidersDemo.routeName),
               child: Text('Sliders'),
+            ),
+            RaisedButton(
+              color: myColor,
+              textColor: Colors.white,
+              onPressed: () =>
+                  Navigator.pushNamed(context, ButtonsDemo.routeName),
+              child: Text('Buttons'),
             ),
           ],
         ),
