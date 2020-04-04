@@ -5,6 +5,7 @@ import './screens/screen1.dart';
 import './screens/screen2.dart';
 
 import './widgets/buttons_demo.dart';
+import './widgets/form_demo.dart';
 import './widgets/row_column.dart';
 import './widgets/scaffold_widget.dart';
 import './widgets/sliders_demo.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
       routes: {
         /*if home not specified app will start from here*/
         ButtonsDemo.routeName: (context) => ButtonsDemo(),
+        FormsDemo.routeName: (context) => FormsDemo(),
         HomeScreen.routeName: (context) => HomeScreen(),
         RowColumn.routeName: (context) => RowColumn(),
         ScaffoldWidget.routeName: (context) => ScaffoldWidget(),
