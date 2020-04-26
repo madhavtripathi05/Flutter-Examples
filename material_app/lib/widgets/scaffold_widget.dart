@@ -1,6 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:material_app/screens/confirmation_acknowledgement.dart';
+import 'package:material_app/widgets/async_await.dart';
 
 import '../screens/home_screen.dart';
 
@@ -9,6 +11,8 @@ import '../widgets/row_column.dart';
 import '../widgets/sliders_demo.dart';
 import '../widgets/stack_widget.dart';
 import '../widgets/buttons_demo.dart';
+import 'gridview_builder.dart';
+import 'listview_builder.dart';
 
 class ScaffoldWidget extends StatefulWidget {
   static const routeName = '/scaffold-widget';
@@ -65,6 +69,23 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
               color: myColor,
               textColor: Colors.white,
               onPressed: () =>
+                  Navigator.pushNamed(context, AsyncAwait.routeName),
+              child: Text('Async/Await/Future'),
+            ),
+            RaisedButton(
+              color: myColor,
+              textColor: Colors.white,
+              onPressed: () => Navigator.pushNamed(
+                  context, ConfirmationAcknowledgement.routeName),
+              child: Text(
+                'Confirmation &\nAcknowledgement',
+                textAlign: TextAlign.center,
+              ),
+            ),
+            RaisedButton(
+              color: myColor,
+              textColor: Colors.white,
+              onPressed: () =>
                   Navigator.pushNamed(context, HomeScreen.routeName),
               child: Text('Navigation Demo'),
             ),
@@ -102,6 +123,20 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
               onPressed: () =>
                   Navigator.pushNamed(context, FormsDemo.routeName),
               child: Text('Form'),
+            ),
+            RaisedButton(
+              color: myColor,
+              textColor: Colors.white,
+              onPressed: () =>
+                  Navigator.pushNamed(context, ListViewBuilderDemo.routeName),
+              child: Text('ListView'),
+            ),
+            RaisedButton(
+              color: myColor,
+              textColor: Colors.white,
+              onPressed: () =>
+                  Navigator.pushNamed(context, GridViewBuilderDemo.routeName),
+              child: Text('GridView'),
             ),
           ],
         ),

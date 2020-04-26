@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:material_app/screens/confirmation_acknowledgement.dart';
+import 'package:material_app/widgets/async_await.dart';
+import 'package:material_app/widgets/gridview_builder.dart';
+import 'package:material_app/widgets/listview_builder.dart';
 
 import './screens/home_screen.dart';
 import './screens/screen1.dart';
@@ -33,9 +37,14 @@ class MyApp extends StatelessWidget {
       //routes to different screens
       routes: {
         /*if home not specified app will start from here*/
+        AsyncAwait.routeName: (context) => AsyncAwait(),
         ButtonsDemo.routeName: (context) => ButtonsDemo(),
+        ConfirmationAcknowledgement.routeName: (context) =>
+            ConfirmationAcknowledgement(),
         FormsDemo.routeName: (context) => FormsDemo(),
+        GridViewBuilderDemo.routeName: (context) => GridViewBuilderDemo(),
         HomeScreen.routeName: (context) => HomeScreen(),
+        ListViewBuilderDemo.routeName: (context) => ListViewBuilderDemo(),
         RowColumn.routeName: (context) => RowColumn(),
         ScaffoldWidget.routeName: (context) => ScaffoldWidget(),
         Screen1.routeName: (context) => Screen1(),
