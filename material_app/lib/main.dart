@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:material_app/screens/confirmation_acknowledgement.dart';
 import 'package:material_app/widgets/async_await.dart';
 import 'package:material_app/widgets/gridview_builder.dart';
+import 'package:material_app/widgets/http_demo.dart';
 import 'package:material_app/widgets/listview_builder.dart';
 
 import './screens/home_screen.dart';
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
         FormsDemo.routeName: (context) => FormsDemo(),
         GridViewBuilderDemo.routeName: (context) => GridViewBuilderDemo(),
         HomeScreen.routeName: (context) => HomeScreen(),
+        HttpDemo.routeName: (context) => HttpDemo(),
         ListViewBuilderDemo.routeName: (context) => ListViewBuilderDemo(),
         RowColumn.routeName: (context) => RowColumn(),
         ScaffoldWidget.routeName: (context) => ScaffoldWidget(),

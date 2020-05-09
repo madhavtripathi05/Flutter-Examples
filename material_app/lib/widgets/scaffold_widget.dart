@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:material_app/screens/confirmation_acknowledgement.dart';
 import 'package:material_app/widgets/async_await.dart';
+import 'package:material_app/widgets/http_demo.dart';
 
 import '../screens/home_screen.dart';
 
@@ -95,6 +96,12 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
               onPressed: () =>
                   Navigator.pushNamed(context, RowColumn.routeName),
               child: Text('Row and column'),
+            ),
+            RaisedButton(
+              color: myColor,
+              textColor: Colors.white,
+              onPressed: () => Navigator.pushNamed(context, HttpDemo.routeName),
+              child: Text('HTTP Demo'),
             ),
             RaisedButton(
               color: myColor,

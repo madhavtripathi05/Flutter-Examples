@@ -93,7 +93,7 @@ class _AsyncAwaitState extends State<AsyncAwait> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Async/Await/Future'),
+        title: Text('A  sync/Await/Future'),
         centerTitle: true,
       ),
       body: Center(
