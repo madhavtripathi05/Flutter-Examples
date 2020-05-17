@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:material_app/screens/confirmation_acknowledgement.dart';
 import 'package:material_app/widgets/async_await.dart';
 import 'package:material_app/widgets/http_demo.dart';
+import 'package:material_app/widgets/stream_demo.dart';
 
 import '../screens/home_screen.dart';
 
@@ -62,90 +63,100 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
         ],
       ),
       body: Center(
-        child: Column(
-          children: <Widget>[
-            Text('Start interacting with different buttons for testing',
-                style: TextStyle(color: myColor)),
-            RaisedButton(
-              color: myColor,
-              textColor: Colors.white,
-              onPressed: () =>
-                  Navigator.pushNamed(context, AsyncAwait.routeName),
-              child: Text('Async/Await/Future'),
-            ),
-            RaisedButton(
-              color: myColor,
-              textColor: Colors.white,
-              onPressed: () => Navigator.pushNamed(
-                  context, ConfirmationAcknowledgement.routeName),
-              child: Text(
-                'Confirmation &\nAcknowledgement',
-                textAlign: TextAlign.center,
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Text('Start interacting with different buttons for testing',
+                  style: TextStyle(color: myColor)),
+              RaisedButton(
+                color: myColor,
+                textColor: Colors.white,
+                onPressed: () =>
+                    Navigator.pushNamed(context, AsyncAwait.routeName),
+                child: Text('Async/Await/Future'),
               ),
-            ),
-            RaisedButton(
-              color: myColor,
-              textColor: Colors.white,
-              onPressed: () =>
-                  Navigator.pushNamed(context, HomeScreen.routeName),
-              child: Text('Navigation Demo'),
-            ),
-            RaisedButton(
-              color: myColor,
-              textColor: Colors.white,
-              onPressed: () =>
-                  Navigator.pushNamed(context, RowColumn.routeName),
-              child: Text('Row and column'),
-            ),
-            RaisedButton(
-              color: myColor,
-              textColor: Colors.white,
-              onPressed: () => Navigator.pushNamed(context, HttpDemo.routeName),
-              child: Text('HTTP Demo'),
-            ),
-            RaisedButton(
-              color: myColor,
-              textColor: Colors.white,
-              onPressed: () =>
-                  Navigator.pushNamed(context, StackWidget.routeName),
-              child: Text('Stack'),
-            ),
-            RaisedButton(
-              color: myColor,
-              textColor: Colors.white,
-              onPressed: () =>
-                  Navigator.pushNamed(context, SlidersDemo.routeName),
-              child: Text('Sliders'),
-            ),
-            RaisedButton(
-              color: myColor,
-              textColor: Colors.white,
-              onPressed: () =>
-                  Navigator.pushNamed(context, ButtonsDemo.routeName),
-              child: Text('Buttons'),
-            ),
-            RaisedButton(
-              color: myColor,
-              textColor: Colors.white,
-              onPressed: () =>
-                  Navigator.pushNamed(context, FormsDemo.routeName),
-              child: Text('Form'),
-            ),
-            RaisedButton(
-              color: myColor,
-              textColor: Colors.white,
-              onPressed: () =>
-                  Navigator.pushNamed(context, ListViewBuilderDemo.routeName),
-              child: Text('ListView'),
-            ),
-            RaisedButton(
-              color: myColor,
-              textColor: Colors.white,
-              onPressed: () =>
-                  Navigator.pushNamed(context, GridViewBuilderDemo.routeName),
-              child: Text('GridView'),
-            ),
-          ],
+              RaisedButton(
+                color: myColor,
+                textColor: Colors.white,
+                onPressed: () => Navigator.pushNamed(
+                    context, ConfirmationAcknowledgement.routeName),
+                child: Text(
+                  'Confirmation &\nAcknowledgement',
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              RaisedButton(
+                color: myColor,
+                textColor: Colors.white,
+                onPressed: () =>
+                    Navigator.pushNamed(context, HomeScreen.routeName),
+                child: Text('Navigation Demo'),
+              ),
+              RaisedButton(
+                color: myColor,
+                textColor: Colors.white,
+                onPressed: () =>
+                    Navigator.pushNamed(context, RowColumn.routeName),
+                child: Text('Row and column'),
+              ),
+              RaisedButton(
+                color: myColor,
+                textColor: Colors.white,
+                onPressed: () =>
+                    Navigator.pushNamed(context, StreamDemo.routeName),
+                child: Text('Stream Demo'),
+              ),
+              RaisedButton(
+                color: myColor,
+                textColor: Colors.white,
+                onPressed: () =>
+                    Navigator.pushNamed(context, HttpDemo.routeName),
+                child: Text('HTTP Demo'),
+              ),
+              RaisedButton(
+                color: myColor,
+                textColor: Colors.white,
+                onPressed: () =>
+                    Navigator.pushNamed(context, StackWidget.routeName),
+                child: Text('Stack'),
+              ),
+              RaisedButton(
+                color: myColor,
+                textColor: Colors.white,
+                onPressed: () =>
+                    Navigator.pushNamed(context, SlidersDemo.routeName),
+                child: Text('Sliders'),
+              ),
+              RaisedButton(
+                color: myColor,
+                textColor: Colors.white,
+                onPressed: () =>
+                    Navigator.pushNamed(context, ButtonsDemo.routeName),
+                child: Text('Buttons'),
+              ),
+              RaisedButton(
+                color: myColor,
+                textColor: Colors.white,
+                onPressed: () =>
+                    Navigator.pushNamed(context, FormsDemo.routeName),
+                child: Text('Form'),
+              ),
+              RaisedButton(
+                color: myColor,
+                textColor: Colors.white,
+                onPressed: () =>
+                    Navigator.pushNamed(context, ListViewBuilderDemo.routeName),
+                child: Text('ListView'),
+              ),
+              RaisedButton(
+                color: myColor,
+                textColor: Colors.white,
+                onPressed: () =>
+                    Navigator.pushNamed(context, GridViewBuilderDemo.routeName),
+                child: Text('GridView'),
+              ),
+            ],
+          ),
         ),
       ),
       drawer: Drawer(
