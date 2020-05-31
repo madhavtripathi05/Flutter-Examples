@@ -4,7 +4,9 @@ import 'package:material_app/widgets/async_await.dart';
 import 'package:material_app/widgets/gridview_builder.dart';
 import 'package:material_app/widgets/http_demo.dart';
 import 'package:material_app/widgets/listview_builder.dart';
+import 'package:material_app/widgets/shared_prefs_demo.dart';
 import 'package:material_app/widgets/stream_demo.dart';
+import 'package:material_app/widgets/tab_bar.dart';
 
 import './screens/home_screen.dart';
 import './screens/screen1.dart';
@@ -52,9 +54,11 @@ class MyApp extends StatelessWidget {
         ScaffoldWidget.routeName: (context) => ScaffoldWidget(),
         Screen1.routeName: (context) => Screen1(),
         Screen2.routeName: (context) => Screen2(),
+        SharedPrefsDemo.routeName: (context) => SharedPrefsDemo(),
         StreamDemo.routeName: (context) => StreamDemo(),
         SlidersDemo.routeName: (context) => SlidersDemo(),
         StackWidget.routeName: (context) => StackWidget(),
+        TabBarDemo.routeName: (context) => TabBarDemo()
       },
     );
   }

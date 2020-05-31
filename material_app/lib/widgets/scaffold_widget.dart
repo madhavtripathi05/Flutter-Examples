@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:material_app/screens/confirmation_acknowledgement.dart';
 import 'package:material_app/widgets/async_await.dart';
 import 'package:material_app/widgets/http_demo.dart';
+import 'package:material_app/widgets/shared_prefs_demo.dart';
 import 'package:material_app/widgets/stream_demo.dart';
+import 'package:material_app/widgets/tab_bar.dart';
 
 import '../screens/home_screen.dart';
 
@@ -89,6 +91,13 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
                 color: myColor,
                 textColor: Colors.white,
                 onPressed: () =>
+                    Navigator.pushNamed(context, SharedPrefsDemo.routeName),
+                child: Text('Shared Prefs Demo'),
+              ),
+              RaisedButton(
+                color: myColor,
+                textColor: Colors.white,
+                onPressed: () =>
                     Navigator.pushNamed(context, HomeScreen.routeName),
                 child: Text('Navigation Demo'),
               ),
@@ -105,6 +114,13 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
                 onPressed: () =>
                     Navigator.pushNamed(context, StreamDemo.routeName),
                 child: Text('Stream Demo'),
+              ),
+              RaisedButton(
+                color: myColor,
+                textColor: Colors.white,
+                onPressed: () =>
+                    Navigator.pushNamed(context, TabBarDemo.routeName),
+                child: Text('TabBar Demo'),
               ),
               RaisedButton(
                 color: myColor,
