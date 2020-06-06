@@ -4,6 +4,7 @@ import 'package:material_app/widgets/async_await.dart';
 import 'package:material_app/widgets/gridview_builder.dart';
 import 'package:material_app/widgets/http_demo.dart';
 import 'package:material_app/widgets/listview_builder.dart';
+import 'package:material_app/widgets/navigation_rail_demo.dart';
 import 'package:material_app/widgets/shared_prefs_demo.dart';
 import 'package:material_app/widgets/stream_demo.dart';
 import 'package:material_app/widgets/tab_bar.dart';
@@ -50,6 +51,7 @@ class MyApp extends StatelessWidget {
         HomeScreen.routeName: (context) => HomeScreen(),
         HttpDemo.routeName: (context) => HttpDemo(),
         ListViewBuilderDemo.routeName: (context) => ListViewBuilderDemo(),
+        NavigationRailDemo.routeName: (context) => NavigationRailDemo(),
         RowColumn.routeName: (context) => RowColumn(),
         ScaffoldWidget.routeName: (context) => ScaffoldWidget(),
         Screen1.routeName: (context) => Screen1(),

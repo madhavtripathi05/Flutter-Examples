@@ -17,6 +17,7 @@ import '../widgets/stack_widget.dart';
 import '../widgets/buttons_demo.dart';
 import 'gridview_builder.dart';
 import 'listview_builder.dart';
+import 'navigation_rail_demo.dart';
 
 class ScaffoldWidget extends StatefulWidget {
   static const routeName = '/scaffold-widget';
@@ -70,6 +71,16 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
             children: <Widget>[
               Text('Start interacting with different buttons for testing',
                   style: TextStyle(color: myColor)),
+              RaisedButton(
+                color: myColor,
+                textColor: Colors.white,
+                onPressed: () =>
+                    Navigator.pushNamed(context, NavigationRailDemo.routeName),
+                child: Text(
+                  'Navigation Rail Demo',
+                  textAlign: TextAlign.center,
+                ),
+              ),
               RaisedButton(
                 color: myColor,
                 textColor: Colors.white,
