@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:material_app/screens/confirmation_acknowledgement.dart';
 import 'package:material_app/widgets/async_await.dart';
+import 'package:material_app/widgets/handling_taps.dart';
 import 'package:material_app/widgets/http_demo.dart';
 import 'package:material_app/widgets/shared_prefs_demo.dart';
 import 'package:material_app/widgets/stream_demo.dart';
@@ -116,8 +117,8 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
                 color: myColor,
                 textColor: Colors.white,
                 onPressed: () =>
-                    Navigator.pushNamed(context, RowColumn.routeName),
-                child: Text('Row and column'),
+                    Navigator.pushNamed(context, HandlingTaps.routeName),
+                child: Text('Handling Taps'),
               ),
               RaisedButton(
                 color: myColor,

@@ -1,14 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:material_app/screens/confirmation_acknowledgement.dart';
-import 'package:material_app/widgets/async_await.dart';
-import 'package:material_app/widgets/gridview_builder.dart';
-import 'package:material_app/widgets/http_demo.dart';
-import 'package:material_app/widgets/listview_builder.dart';
-import 'package:material_app/widgets/navigation_rail_demo.dart';
-import 'package:material_app/widgets/shared_prefs_demo.dart';
-import 'package:material_app/widgets/stream_demo.dart';
-import 'package:material_app/widgets/tab_bar.dart';
 
+import './screens/confirmation_acknowledgement.dart';
 import './screens/home_screen.dart';
 import './screens/screen1.dart';
 import './screens/screen2.dart';
@@ -19,8 +11,17 @@ import './widgets/row_column.dart';
 import './widgets/scaffold_widget.dart';
 import './widgets/sliders_demo.dart';
 import './widgets/stack_widget.dart';
+import './widgets/async_await.dart';
+import './widgets/gridview_builder.dart';
+import './widgets/handling_taps.dart';
+import './widgets/http_demo.dart';
+import './widgets/listview_builder.dart';
+import './widgets/navigation_rail_demo.dart';
+import './widgets/shared_prefs_demo.dart';
+import './widgets/stream_demo.dart';
+import './widgets/tab_bar.dart';
 
-//as every programming language execution starts from main()
+//like every programming language execution starts from main()
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -50,6 +51,7 @@ class MyApp extends StatelessWidget {
         GridViewBuilderDemo.routeName: (context) => GridViewBuilderDemo(),
         HomeScreen.routeName: (context) => HomeScreen(),
         HttpDemo.routeName: (context) => HttpDemo(),
+        HandlingTaps.routeName: (context) => HandlingTaps(),
         ListViewBuilderDemo.routeName: (context) => ListViewBuilderDemo(),
         NavigationRailDemo.routeName: (context) => NavigationRailDemo(),
         RowColumn.routeName: (context) => RowColumn(),
