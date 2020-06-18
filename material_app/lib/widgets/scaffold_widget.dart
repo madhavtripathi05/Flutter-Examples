@@ -1,18 +1,17 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:material_app/screens/confirmation_acknowledgement.dart';
-import 'package:material_app/widgets/async_await.dart';
-import 'package:material_app/widgets/handling_taps.dart';
-import 'package:material_app/widgets/http_demo.dart';
-import 'package:material_app/widgets/shared_prefs_demo.dart';
-import 'package:material_app/widgets/stream_demo.dart';
-import 'package:material_app/widgets/tab_bar.dart';
-
+import 'package:material_app/bloc/my_provider.dart';
+import '../screens/bloc_login.dart';
+import '../screens/confirmation_acknowledgement.dart';
 import '../screens/home_screen.dart';
-
+import '../widgets/async_await.dart';
+import '../widgets/handling_taps.dart';
+import '../widgets/http_demo.dart';
+import '../widgets/shared_prefs_demo.dart';
+import '../widgets/stream_demo.dart';
+import '../widgets/tab_bar.dart';
 import '../widgets/form_demo.dart';
-import '../widgets/row_column.dart';
 import '../widgets/sliders_demo.dart';
 import '../widgets/stack_widget.dart';
 import '../widgets/buttons_demo.dart';
@@ -140,6 +139,13 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
                 onPressed: () =>
                     Navigator.pushNamed(context, HttpDemo.routeName),
                 child: Text('HTTP Demo'),
+              ),
+              RaisedButton(
+                color: myColor,
+                textColor: Colors.white,
+                onPressed: () =>
+                    Navigator.pushNamed(context, BlocLogin.routeName),
+                child: Text('Bloc Login'),
               ),
               RaisedButton(
                 color: myColor,
