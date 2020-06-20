@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:material_app/screens/bloc_login.dart';
+import 'package:material_app/screens/todo_screen.dart';
 
 import './screens/confirmation_acknowledgement.dart';
 import './screens/home_screen.dart';
@@ -65,6 +66,7 @@ class MyApp extends StatelessWidget {
           SharedPrefsDemo.routeName: (context) => SharedPrefsDemo(),
           StreamDemo.routeName: (context) => StreamDemo(),
           SlidersDemo.routeName: (context) => SlidersDemo(),
+          TodoScreen.routeName: (context) => TodoScreen(),
           StackWidget.routeName: (context) => StackWidget(),
           TabBarDemo.routeName: (context) => TabBarDemo()
         },
