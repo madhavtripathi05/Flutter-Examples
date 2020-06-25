@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:material_app/bloc/my_provider.dart';
+import 'package:material_app/screens/animations_screen.dart';
 import 'package:material_app/screens/todo_screen.dart';
 import '../screens/bloc_login.dart';
 import '../screens/confirmation_acknowledgement.dart';
@@ -42,6 +43,26 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
   ];
   int counter = 0;
   int selectedIndex = 0;
+  List<Map<String, String>> titles = [
+    {'Navigation Rail Demo': NavigationRailDemo.routeName},
+    {'Async/Await/Future': AsyncAwait.routeName},
+    {'Confirmation &\nAcknowledgement': ConfirmationAcknowledgement.routeName},
+    {'Shared Prefs Demo': SharedPrefsDemo.routeName},
+    {'Navigation Demo': Navigator.defaultRouteName},
+    {'Handling Taps': HandlingTaps.routeName},
+    {'Stream Demo': StreamDemo.routeName},
+    {'TabBar Demo': TabBarDemo.routeName},
+    {'HTTP Demo': HttpDemo.routeName},
+    {'Animations': AnimationsScreen.routeName},
+    {'Bloc Login': BlocLogin.routeName},
+    {'Todo App': TodoScreen.routeName},
+    {'Listview': ListViewBuilderDemo.routeName},
+    {'Gridview': GridViewBuilderDemo.routeName},
+    {'Sliders': SlidersDemo.routeName},
+    {'Buttons': ButtonsDemo.routeName},
+    {'Stack': StackWidget.routeName},
+    {'Form': FormsDemo.routeName},
+  ];
   void changeColor() =>
       setState(() => myColor = colors[Random().nextInt(colors.length)]);
   void increment() => setState(() => counter++);
@@ -70,133 +91,18 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              // organize this
-              RaisedButton(
-                color: myColor,
-                textColor: Colors.white,
-                onPressed: () =>
-                    Navigator.pushNamed(context, NavigationRailDemo.routeName),
-                child: Text(
-                  'Navigation Rail Demo',
-                  textAlign: TextAlign.center,
+              for (var i = 0; i < titles.length; i++) ...[
+                RaisedButton(
+                  color: myColor,
+                  textColor: Colors.white,
+                  onPressed: () =>
+                      Navigator.pushNamed(context, titles[i].values.first),
+                  child: Text(
+                    titles[i].keys.first,
+                    textAlign: TextAlign.center,
+                  ),
                 ),
-              ),
-              RaisedButton(
-                color: myColor,
-                textColor: Colors.white,
-                onPressed: () =>
-                    Navigator.pushNamed(context, AsyncAwait.routeName),
-                child: Text('Async/Await/Future'),
-              ),
-              RaisedButton(
-                color: myColor,
-                textColor: Colors.white,
-                onPressed: () => Navigator.pushNamed(
-                    context, ConfirmationAcknowledgement.routeName),
-                child: Text(
-                  'Confirmation &\nAcknowledgement',
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              RaisedButton(
-                color: myColor,
-                textColor: Colors.white,
-                onPressed: () =>
-                    Navigator.pushNamed(context, SharedPrefsDemo.routeName),
-                child: Text('Shared Prefs Demo'),
-              ),
-              RaisedButton(
-                color: myColor,
-                textColor: Colors.white,
-                onPressed: () =>
-                    Navigator.pushNamed(context, HomeScreen.routeName),
-                child: Text('Navigation Demo'),
-              ),
-              RaisedButton(
-                color: myColor,
-                textColor: Colors.white,
-                onPressed: () =>
-                    Navigator.pushNamed(context, HandlingTaps.routeName),
-                child: Text('Handling Taps'),
-              ),
-
-              RaisedButton(
-                color: myColor,
-                textColor: Colors.white,
-                onPressed: () =>
-                    Navigator.pushNamed(context, StreamDemo.routeName),
-                child: Text('Stream Demo'),
-              ),
-              RaisedButton(
-                color: myColor,
-                textColor: Colors.white,
-                onPressed: () =>
-                    Navigator.pushNamed(context, TabBarDemo.routeName),
-                child: Text('TabBar Demo'),
-              ),
-              RaisedButton(
-                color: myColor,
-                textColor: Colors.white,
-                onPressed: () =>
-                    Navigator.pushNamed(context, HttpDemo.routeName),
-                child: Text('HTTP Demo'),
-              ),
-              RaisedButton(
-                color: myColor,
-                textColor: Colors.white,
-                onPressed: () =>
-                    Navigator.pushNamed(context, BlocLogin.routeName),
-                child: Text('Bloc Login'),
-              ),
-              RaisedButton(
-                color: myColor,
-                textColor: Colors.white,
-                onPressed: () =>
-                    Navigator.pushNamed(context, TodoScreen.routeName),
-                child: Text('Todo App'),
-              ),
-              RaisedButton(
-                color: myColor,
-                textColor: Colors.white,
-                onPressed: () =>
-                    Navigator.pushNamed(context, StackWidget.routeName),
-                child: Text('Stack'),
-              ),
-              RaisedButton(
-                color: myColor,
-                textColor: Colors.white,
-                onPressed: () =>
-                    Navigator.pushNamed(context, SlidersDemo.routeName),
-                child: Text('Sliders'),
-              ),
-              RaisedButton(
-                color: myColor,
-                textColor: Colors.white,
-                onPressed: () =>
-                    Navigator.pushNamed(context, ButtonsDemo.routeName),
-                child: Text('Buttons'),
-              ),
-              RaisedButton(
-                color: myColor,
-                textColor: Colors.white,
-                onPressed: () =>
-                    Navigator.pushNamed(context, FormsDemo.routeName),
-                child: Text('Form'),
-              ),
-              RaisedButton(
-                color: myColor,
-                textColor: Colors.white,
-                onPressed: () =>
-                    Navigator.pushNamed(context, ListViewBuilderDemo.routeName),
-                child: Text('ListView'),
-              ),
-              RaisedButton(
-                color: myColor,
-                textColor: Colors.white,
-                onPressed: () =>
-                    Navigator.pushNamed(context, GridViewBuilderDemo.routeName),
-                child: Text('GridView'),
-              ),
+              ],
             ],
           ),
         ),

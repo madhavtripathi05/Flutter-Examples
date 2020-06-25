@@ -6,6 +6,7 @@ import './screens/confirmation_acknowledgement.dart';
 import './screens/home_screen.dart';
 import './screens/screen1.dart';
 import './screens/screen2.dart';
+import './screens/animations_screen.dart';
 
 import './widgets/buttons_demo.dart';
 import './widgets/form_demo.dart';
@@ -24,7 +25,7 @@ import './widgets/stream_demo.dart';
 import './widgets/tab_bar.dart';
 import 'bloc/my_provider.dart';
 
-//like every programming language execution starts from main()
+// just like every programming language, execution starts from main()
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -38,15 +39,16 @@ class MyApp extends StatelessWidget {
         //title of your app
         title: 'Sample App',
 
-        //theme:
+        // theme:
         theme: ThemeData(primaryColor: Colors.blue, fontFamily: 'google'),
 
-        //our app will be loaded from here
+        // our app will be loaded from here
         home: ScaffoldWidget(),
 
-        //routes to different screens
+        // routes to different screens
         routes: {
           /*if home not specified app will start from here*/
+          AnimationsScreen.routeName: (context) => AnimationsScreen(),
           AsyncAwait.routeName: (context) => AsyncAwait(),
           ButtonsDemo.routeName: (context) => ButtonsDemo(),
           BlocLogin.routeName: (context) => BlocLogin(),

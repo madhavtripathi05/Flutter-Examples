@@ -27,6 +27,19 @@ class Todo {
   }
 }
 
+/*
+* As Always, for full code and detailed
+* explanation check link in Bio.
+* always prefer using 'query' instead of 'rawQuery'
+* as there's a possibility of SQL Injection.
+* It's not necessary but close the DB after using.
+* You can't use "bool" dataType in SQLite
+* therefore you have to use integer and 
+* store as 1 or 0. for Storing Lists you
+* can use "BLOB" dataType.  
+* if you've any doubts let me know in Comments.
+*/
+
 class TodoScreen extends StatefulWidget {
   static const routeName = '/todo-screen';
   @override
@@ -149,6 +162,10 @@ class _TodoScreenState extends State<TodoScreen> {
     super.initState();
   }
 
+/*
+ * Similarly, call deleteTodo on deletes'
+ * onPressed and so on.. 
+ */
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
