@@ -1,4 +1,4 @@
-# Example Apps built for exploring Flutter
+# Example App built for exploring Flutter
 by [Flutter Coders](https://www.instagram.com/flutter_coders/)
 
 # Some Screenshots:
@@ -10,14 +10,34 @@ by [Flutter Coders](https://www.instagram.com/flutter_coders/)
 
 [ss5]:https://github.com/madhavtripathi05/Flutter-Examples/blob/master/material_app/screenshots/scaffold_example.gif "Scaffold Demo5"
 
-# List of Widgets Explored
+# List of Stuff Explored
 
+- [x] Animations
+- [x] Async Programming
 - [x] BottomNavigationBar
+- [x] BottomSheet
+- [x] Buttons
+- [x] Bloc (WIP)
 - [x] Card
 - [x] CircleAvatar
 - [x] Column
+- [x] Forms
+- [x] Futures
+- [x] Fetching Data using http
+- [x] GridView
+- [x] Gesture Detector
+- [x] InkWell
+- [x] ListView
+- [x] Navigation (basics)
+- [x] Navigation Rail
 - [x] Row
 - [x] Scaffold
+- [x] Shared Preferences
+- [x] Sliders
+- [x] Snackbar
+- [x] Sqflite
+- [x] Stack
+- [x] Streams
 
 ## Getting Started
 

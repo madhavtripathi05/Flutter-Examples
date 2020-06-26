@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:animations/animations.dart';
+import 'package:dartx/dartx.dart';
+import 'package:flutter_icons/flutter_icons.dart';
+import 'package:material_app/screens/screen1.dart';
 
 class AnimationsScreen extends StatefulWidget {
   static const routeName = '/animations-screen';
@@ -58,19 +62,58 @@ class _AnimationsScreenState extends State<AnimationsScreen>
         title: Text('Animations'),
         centerTitle: true,
       ),
-      body: GestureDetector(
-        child: Center(
-          child: Stack(
-            overflow: Overflow.visible,
-            children: [
-              buildAnimation(),
-              buildSideObj(),
-              buildSideObj(true),
-              buildBox(),
-            ],
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          GestureDetector(
+            child: Center(
+              child: Stack(
+                overflow: Overflow.visible,
+                children: [
+                  buildAnimation(),
+                  buildSideObj(),
+                  buildSideObj(true),
+                  buildBox(),
+                ],
+              ),
+            ),
+            onTap: onTap,
           ),
-        ),
-        onTap: onTap,
+          OpenContainer(
+            transitionDuration: 0.5.seconds,
+            closedBuilder: (context, action) => FlatButton(
+                onPressed: () => action(), child: Text('Open Container')),
+            openBuilder: (context, action) => Screen1(),
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showModal(
+              configuration: FadeScaleTransitionConfiguration(
+                  transitionDuration: 0.5.seconds),
+              context: context,
+              builder: (ctx) {
+                return AlertDialog(
+                  content: Text('Fade Scale Transition'),
+                  actions: <Widget>[
+                    FlatButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Text('Cancel'),
+                    ),
+                    FlatButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Text('Okay'),
+                    ),
+                  ],
+                );
+              });
+        },
+        child: Icon(FlutterIcons.open_in_app_mco),
       ),
     );
   }
