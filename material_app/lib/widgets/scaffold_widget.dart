@@ -48,7 +48,7 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
     {'Async/Await/Future': AsyncAwait.routeName},
     {'Confirmation &\nAcknowledgement': ConfirmationAcknowledgement.routeName},
     {'Shared Prefs Demo': SharedPrefsDemo.routeName},
-    {'Navigation Demo': Navigator.defaultRouteName},
+    {'Navigation Demo': HomeScreen.routeName},
     {'Handling Taps': HandlingTaps.routeName},
     {'Stream Demo': StreamDemo.routeName},
     {'TabBar Demo': TabBarDemo.routeName},
@@ -103,6 +103,7 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
                   ),
                 ),
               ],
+              Spacer()
             ],
           ),
         ),

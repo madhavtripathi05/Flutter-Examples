@@ -12,13 +12,21 @@ class AnimationsScreen extends StatefulWidget {
 
 class _AnimationsScreenState extends State<AnimationsScreen>
     with TickerProviderStateMixin {
+/*
+* TickerProviderStateMixin creates a ticker that ticks with 
+* each frame which is needed by AnimationController, It also
+* disposes when our stateful widget is disposed, that's why
+* we provide "this" as "vsync" property in AnimationController
+*/
+  AnimationController objController;
   Animation<double> objAnimation;
+
   Animation<double> sideObjAnimation;
   Animation<double> opacityAnimation;
 
-  AnimationController objController;
   AnimationController opacityController;
   AnimationController sideObjController;
+
   @override
   void initState() {
     super.initState();
@@ -26,14 +34,18 @@ class _AnimationsScreenState extends State<AnimationsScreen>
     objController =
         AnimationController(vsync: this, duration: Duration(milliseconds: 900));
 
+    //* Tween(short for 'between') describes a Range
+    //* of values that our obj will animate on.
+    objAnimation = Tween(begin: -50.0, end: -100.0).animate(CurvedAnimation(
+      parent: objController,
+      curve: Curves.easeInOutCirc,
+    ));
+
     opacityController =
         AnimationController(vsync: this, duration: Duration(milliseconds: 900));
 
     sideObjController =
         AnimationController(vsync: this, duration: Duration(milliseconds: 900));
-    //* Tween(short for between) describes a Range of value that our obj will animate on.
-    objAnimation = Tween(begin: -50.0, end: -100.0).animate(
-        CurvedAnimation(parent: objController, curve: Curves.easeInOutCirc));
 
     sideObjAnimation = Tween(begin: 0.0, end: -150.0).animate(
         CurvedAnimation(parent: sideObjController, curve: Curves.decelerate));
@@ -45,9 +57,11 @@ class _AnimationsScreenState extends State<AnimationsScreen>
   }
 
   onTap() {
+    //* starting the animation
     objController.forward();
     opacityController.forward();
     sideObjController.forward();
+    //* if it's completed, you can also play it in reverse
     if (objController.status == AnimationStatus.completed) {
       objController.reverse();
       sideObjController.reverse();
@@ -58,6 +72,7 @@ class _AnimationsScreenState extends State<AnimationsScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('Animations'),
         centerTitle: true,
@@ -79,19 +94,26 @@ class _AnimationsScreenState extends State<AnimationsScreen>
             ),
             onTap: onTap,
           ),
+          //* if you're planning to make simple animations for page
+          //* Transitions, check this package called "animations".
+          //* it's very simple to use:
           OpenContainer(
-            transitionDuration: 0.5.seconds,
+            transitionDuration: Duration(seconds: 1),
+            //* Widget before animation:
             closedBuilder: (context, action) => FlatButton(
                 onPressed: () => action(), child: Text('Open Container')),
+            //! Use this only for Page transitions
+            //* Screen which will opened after animation.
             openBuilder: (context, action) => Screen1(),
           ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          //* this package also has Fade Animation for Alerts
           showModal(
               configuration: FadeScaleTransitionConfiguration(
-                  transitionDuration: 0.5.seconds),
+                  transitionDuration: Duration(seconds: 1)),
               context: context,
               builder: (ctx) {
                 return AlertDialog(
@@ -119,7 +141,10 @@ class _AnimationsScreenState extends State<AnimationsScreen>
   }
 
   Widget buildBox() {
+    //* Similarly, you can also create an opacity animation by
+    //* passing 0.0-1.0 as values in Tween and using FadeTransition
     return FadeTransition(
+      //* opacity changes according to our Animation
       opacity: opacityAnimation,
       child: Container(
         height: 200,
@@ -149,11 +174,14 @@ class _AnimationsScreenState extends State<AnimationsScreen>
   }
 
   Widget buildAnimation() {
+    //* AnimatedBuilder takes animation and builds it
     return AnimatedBuilder(
       animation: objAnimation,
       builder: (context, child) {
         return Positioned(
           child: child,
+          //* image will move from -50.0 to -100.0
+          //* as specified in Tween
           top: objAnimation.value,
           right: 0,
           left: 0,
