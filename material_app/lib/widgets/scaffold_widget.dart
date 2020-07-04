@@ -1,25 +1,8 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:material_app/bloc/my_provider.dart';
-import 'package:material_app/screens/animations_screen.dart';
-import 'package:material_app/screens/todo_screen.dart';
-import '../screens/bloc_login.dart';
-import '../screens/confirmation_acknowledgement.dart';
-import '../screens/home_screen.dart';
-import '../widgets/async_await.dart';
-import '../widgets/handling_taps.dart';
-import '../widgets/http_demo.dart';
-import '../widgets/shared_prefs_demo.dart';
-import '../widgets/stream_demo.dart';
-import '../widgets/tab_bar.dart';
-import '../widgets/form_demo.dart';
-import '../widgets/sliders_demo.dart';
-import '../widgets/stack_widget.dart';
-import '../widgets/buttons_demo.dart';
-import 'gridview_builder.dart';
-import 'listview_builder.dart';
-import 'navigation_rail_demo.dart';
+
+import '../screens/screens.dart';
+import '../widgets/widgets.dart';
 
 class ScaffoldWidget extends StatefulWidget {
   static const routeName = '/scaffold-widget';
@@ -52,6 +35,7 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
     {'Handling Taps': HandlingTaps.routeName},
     {'Stream Demo': StreamDemo.routeName},
     {'TabBar Demo': TabBarDemo.routeName},
+    {'Google Maps': MapsScreen.routeName},
     {'HTTP Demo': HttpDemo.routeName},
     {'Animations': AnimationsScreen.routeName},
     {'Bloc Login': BlocLogin.routeName},
@@ -92,7 +76,8 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
           child: Column(
             children: <Widget>[
               for (var i = 0; i < titles.length; i++) ...[
-                RaisedButton(
+                FlatButton(
+                  // padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   color: myColor,
                   textColor: Colors.white,
                   onPressed: () =>
@@ -103,7 +88,7 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
                   ),
                 ),
               ],
-              Spacer()
+              SizedBox(height: 30)
             ],
           ),
         ),
@@ -148,7 +133,7 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        /*what should happen when we tap on button,
+        /* what should happen when we tap on button,
         here we're calling buttonTap method defined priorly*/
         onPressed: changeColor,
         tooltip: 'tap me to change color of appBar',
