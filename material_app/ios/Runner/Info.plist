@@ -10,6 +10,9 @@
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<!-- Add this in info.plist -->
+	<key>NSFaceIDUsageDescription</key>
+	<string>Why is my app authenticating using face id?</string>
 	<key>CFBundleName</key>
 	<string>material_app</string>
 	<key>CFBundlePackageType</key>

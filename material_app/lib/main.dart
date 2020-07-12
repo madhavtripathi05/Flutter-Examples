@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
         /*if home not specified app will start from here*/
         AnimationsScreen.routeName: (context) => AnimationsScreen(),
         AsyncAwait.routeName: (context) => AsyncAwait(),
+        AuthScreen.routeName: (context) => AuthScreen(),
         ButtonsDemo.routeName: (context) => ButtonsDemo(),
         BlocLogin.routeName: (context) => BlocLogin(),
         ConfirmationAcknowledgement.routeName: (context) =>

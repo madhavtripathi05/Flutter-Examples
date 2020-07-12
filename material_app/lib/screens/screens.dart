@@ -6,3 +6,4 @@ export 'screen1.dart';
 export 'screen2.dart';
 export 'animations_screen.dart';
 export 'maps_screen.dart';
+export 'auth_screen.dart';

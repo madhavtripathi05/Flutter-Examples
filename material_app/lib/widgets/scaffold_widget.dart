@@ -37,6 +37,7 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
     {'TabBar Demo': TabBarDemo.routeName},
     {'Google Maps': MapsScreen.routeName},
     {'HTTP Demo': HttpDemo.routeName},
+    {'Auth Demo': AuthScreen.routeName},
     {'Animations': AnimationsScreen.routeName},
     {'Bloc Login': BlocLogin.routeName},
     {'Todo App': TodoScreen.routeName},
