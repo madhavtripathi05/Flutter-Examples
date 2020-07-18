@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:animations/animations.dart';
-import 'package:dartx/dartx.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:material_app/screens/screen1.dart';
 
