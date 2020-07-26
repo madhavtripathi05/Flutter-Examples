@@ -32,6 +32,7 @@ class _StreamDemoState extends State<StreamDemo> {
     // never forget to cancel the Stream Subscription
     flow = false;
     streamSubscription1.cancel();
+    streamController.close();
     super.dispose();
   }
 
@@ -98,7 +99,7 @@ class _StreamDemoState extends State<StreamDemo> {
             //   color: Colors.red,
             //   onPressed: () {
             //     streamController.close();
-            //   },0
+            //   },
             //   child: Text('Close Stream'),
             // ),
           ],
