@@ -1,16 +1,18 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+/*
+* Get has Two types of State manager
+* 1) similar to ChangeNotifier, which updates the sate when update() is called
+* 2) Reactive: Similar to Bloc, based on streams 
+*/
+
+//* Controllers are used to control state of your app
+
 class MyController extends GetxController {
-  final _text = ''.obs;
-  final _count = 0.obs;
-  SharedPreferences prefs;
-
-  int get count => this._count.value;
-  set count(value) => this._count.value = value;
-
-  String get text => this._text.value;
-  set text(value) => this._text.value = value;
+  //* Normal variable
+  int count = 0;
 
   increment() {
     count++;
@@ -20,19 +22,7 @@ class MyController extends GetxController {
 
   decrement() {
     count--;
+    //* similar to calling notifyListeners()
     update();
-  }
-
-  updateText(String data) {
-    text = data;
-    update();
-    prefs.setString('data', data);
-  }
-
-  @override
-  void onInit() async {
-    prefs = await SharedPreferences.getInstance();
-    text = prefs.getString('data') ?? '!';
-    super.onInit();
   }
 }

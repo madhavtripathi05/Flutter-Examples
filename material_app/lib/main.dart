@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:material_app/routes.dart';
+import './controllers/bindings/product_bind.dart';
 
 import './widgets/widgets.dart';
 import './utils/translations.dart';
@@ -13,7 +14,9 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Instead of MaterialApp return GetMaterialApp
+    //* Instead of MaterialApp return GetMaterialApp
+    //* Also if you're using Get just for managing states,
+    //* You don't need to use GetMaterialApp()
     return GetMaterialApp(
       //for hiding that debug logo on top
       debugShowCheckedModeBanner: false,
@@ -29,6 +32,8 @@ class MyApp extends StatelessWidget {
       //* Internationalize your apps easily!
       locale: Locale('en', 'US'),
       translations: AppTranslations(),
+
+      initialBinding: ProductBind(),
 
       //* Page Transition Animation.
       defaultTransition: Transition.fadeIn,

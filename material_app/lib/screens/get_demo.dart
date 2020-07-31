@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:material_app/controllers/product_controller.dart';
+import '../controllers/my_controller.dart';
 import '../constants.dart';
 import './get_screen.dart';
 
+/*
+ * 3 Ways to use Get State Manager
+ * 1) by initializing controller using Get.put()
+ * 2) by using init inside GetBuilder()
+ * 3) by using Get.find()
+ */
 class GetDemo extends StatelessWidget {
   static const routeName = '/get-demo';
+  //* Initialize this controller to use inside any widget
+  final MyController myController = Get.find<MyController>();
+  final ProductController productController = Get.find<ProductController>();
+
   @override
   Widget build(BuildContext context) {
     var results;
@@ -120,7 +132,7 @@ class GetDemo extends StatelessWidget {
                       //* Using Named Routes
                       //* when the next screen is closed and if you
                       //* want some data back you can do:
-                      results = await Get.toNamed('/get-screen',
+                      results = await Get.toNamed(GetScreen.routeName,
                           arguments: 'some data');
                       print(results);
 
@@ -146,6 +158,44 @@ class GetDemo extends StatelessWidget {
             Text(
                 'Screen Height: ${Get.height.round()} px, Width: ${Get.width.round()} px'),
             Text('isAndroid: ${GetPlatform.isAndroid}'),
+            GetBuilder<MyController>(
+                //* if you're just using MyController in this
+                //* particular widget you can use init:
+                init: MyController(),
+                builder: (_) {
+                  return Text('Count: ${_.count}');
+                }),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                FlatButton.icon(
+                    onPressed: () => myController.increment(),
+                    icon: Icon(Icons.add, color: Colors.green),
+                    textColor: Colors.green,
+                    label: Text('Add')),
+                FlatButton.icon(
+                    //* Get will search for MyController in RAM
+                    onPressed: () => Get.find<MyController>().decrement(),
+                    icon: Icon(Icons.remove, color: Colors.red),
+                    textColor: Colors.red,
+                    label: Text('Sub'))
+              ],
+            ),
+
+            //* Lightweight GetX, w/o init(consumes less memory)
+            Obx(() => Card(
+                    child: Column(
+                  children: [
+                    Text(
+                      'Product Title: ${productController.product.value.title}',
+                      style: kBoldText,
+                    ),
+                    Text(
+                      'Product Price: ${productController.product.value.price}',
+                      style: kBoldText,
+                    ),
+                  ],
+                )))
           ],
         ),
       ),
