@@ -4,13 +4,21 @@ import '../models/product.dart';
 import 'package:dartx/dartx.dart';
 
 class ProductController extends GetxController {
-  //* Reactive Object (RxProduct)
+  //* Reactive Model (RxProduct)
   final product = Product().obs;
+
+  //* just add .obs to any Type to make it an
+  //* Observable, or you can alternatively use:
+  final string = Rx<String>();
+
+  //* for controlling textFields
   TextEditingController titleController;
   TextEditingController priceController;
 
   @override
   void onInit() {
+    //*  onInit is automatically called when
+    //* controller is initialized like initState()
     titleController = TextEditingController();
     priceController = TextEditingController();
 
@@ -24,7 +32,7 @@ class ProductController extends GetxController {
     once(product, (_) => print('product: ${_.title} updated once'));
 
     //* Anti DDos - Called every time the user stops typing for 1 second
-    debounce(product, (_) => print('got product: ${_.title} after 1 seconds'),
+    debounce(product, (_) => print('got product: ${_.title} after 1 second'),
         time: 1.seconds);
 
     //* Ignore all changes within 1 second.
@@ -36,6 +44,8 @@ class ProductController extends GetxController {
 
   @override
   void onClose() {
+    //* onClose is called when this controller is removed
+    //* from the memory, dispose off your streams here.
     titleController?.dispose();
     priceController?.dispose();
     super.onClose();

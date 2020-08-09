@@ -1,22 +1,21 @@
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 /*
-* Get has Two types of State manager
-* 1) similar to ChangeNotifier, which updates the sate when update() is called
-* 2) Reactive: Similar to Bloc, based on streams 
+* Get has Two types of State manager.
+* 1) Simple: similar to ChangeNotifier, which updates the
+* state whenever update() is called.
+* 2) Reactive: Similar to Bloc, based on streams (next post)
 */
 
+class MyController extends GetxController {
 //* Controllers are used to control state of your app
 
-class MyController extends GetxController {
   //* Normal variable
   int count = 0;
 
   increment() {
     count++;
-    //* for updating in UI
+    //* for updating the UI
     update();
   }
 

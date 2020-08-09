@@ -33,6 +33,8 @@ class MyApp extends StatelessWidget {
       locale: Locale('en', 'US'),
       translations: AppTranslations(),
 
+      //* you can also set initial
+      //* binding in GetMaterialApp
       initialBinding: ProductBind(),
 
       //* Page Transition Animation.

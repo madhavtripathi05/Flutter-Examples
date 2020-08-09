@@ -15,16 +15,16 @@ class GetScreen extends StatelessWidget {
         return Future.value(true);
       },
       child: Scaffold(
-          appBar: AppBar(title: Text('MyPage')),
+          appBar: AppBar(title: Text('MyPage'), centerTitle: true),
           body: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 //* Getting Data from prev screen
                 Text('data form Previous Screen: ${Get.arguments}'),
-
+                //* GetX is used to consume data from ProductController
                 GetX<ProductController>(
-                    // no need if you are using bindings
+                    //* no need to initialize, if you're using binding
                     init: ProductController(),
                     builder: (_) {
                       return Card(
@@ -34,11 +34,14 @@ class GetScreen extends StatelessWidget {
                           padding: EdgeInsets.all(8.0),
                           child: Column(
                             children: [
+                              //* for accessing var from a model,
+                              //* you need to use model.value.var
                               Text('Title: ${_.product.value.title}',
                                   style: kBoldText),
                               Text('Price: ${_.product.value.price}',
                                   style: kBoldText),
                               TextFormField(
+                                //* assign controller to TextField
                                 controller: _.titleController,
                                 decoration:
                                     InputDecoration(labelText: 'Product title'),
@@ -50,6 +53,7 @@ class GetScreen extends StatelessWidget {
                                     InputDecoration(labelText: 'Product price'),
                                 keyboardType: TextInputType.number,
                               ),
+                              //* for updating your product just use:
                               FlatButton(
                                   onPressed: () => _.updateProduct(),
                                   child: Text('Update'))

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 final kDarkTheme = ThemeData(brightness: Brightness.dark, fontFamily: 'google');
 final kLightTheme =
     ThemeData(brightness: Brightness.light, fontFamily: 'google');
-final kBoldText =
-    TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.green);
+final kBoldText = TextStyle(
+    fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blueAccent);
 //* JSON will be something like this:
 const kDarkStyledMaps = '''[
       { elementType: "geometry", stylers: [{ color: "#242f3e" }] },

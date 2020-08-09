@@ -6,16 +6,24 @@ import '../constants.dart';
 import './get_screen.dart';
 
 /*
- * 3 Ways to use Get State Manager
- * 1) by initializing controller using Get.put()
- * 2) by using init inside GetBuilder()
- * 3) by using Get.find()
+ * Multiple Ways to use Get State Manager:
+ * by initializing controller using Get.put()
+ * by using init inside GetBuilder()
+ * by using Get.find()
  */
 class GetDemo extends StatelessWidget {
+  //* Initialize controller to use inside any widget
+  final MyController myController = Get.put(MyController());
+
   static const routeName = '/get-demo';
-  //* Initialize this controller to use inside any widget
-  final MyController myController = Get.find<MyController>();
   final ProductController productController = Get.find<ProductController>();
+  void misc() {
+    //* Some Misc things present in GetUtils
+    GetUtils.capitalizeFirst('get');
+    GetUtils.isPhoneNumber('9123456789');
+    GetUtils.isHTML('<html></html>');
+    //* and much more...
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +37,36 @@ class GetDemo extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                FlatButton.icon(
+                  //* call methods available in MyController
+                  onPressed: () => myController.increment(),
+                  icon: Icon(Icons.add, color: Colors.green),
+                  textColor: Colors.green,
+                  label: Text('Add'),
+                ),
+
+                //* re-builds whenever update() is called
+                GetBuilder<MyController>(
+                    //* if you're just using MyController in this
+                    //* particular widget you can use init:
+                    init: MyController(),
+                    builder: (_) {
+                      return Text('Count: ${_.count}');
+                    }),
+
+                FlatButton.icon(
+                    //* Get will search for MyController in RAM
+                    onPressed: () => Get.find<MyController>().decrement(),
+                    icon: Icon(Icons.remove, color: Colors.red),
+                    textColor: Colors.red,
+                    label: Text('Sub'))
+              ],
+            ),
+
+            SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -111,7 +149,7 @@ class GetDemo extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 FlatButton(
-                  child: Text('Open BottomSheet'),
+                  child: Text('BottomSheet'),
                   textColor: Colors.purpleAccent,
                   onPressed: () =>
                       //* Open BottomSheet
@@ -158,44 +196,23 @@ class GetDemo extends StatelessWidget {
             Text(
                 'Screen Height: ${Get.height.round()} px, Width: ${Get.width.round()} px'),
             Text('isAndroid: ${GetPlatform.isAndroid}'),
-            GetBuilder<MyController>(
-                //* if you're just using MyController in this
-                //* particular widget you can use init:
-                init: MyController(),
-                builder: (_) {
-                  return Text('Count: ${_.count}');
-                }),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                FlatButton.icon(
-                    onPressed: () => myController.increment(),
-                    icon: Icon(Icons.add, color: Colors.green),
-                    textColor: Colors.green,
-                    label: Text('Add')),
-                FlatButton.icon(
-                    //* Get will search for MyController in RAM
-                    onPressed: () => Get.find<MyController>().decrement(),
-                    icon: Icon(Icons.remove, color: Colors.red),
-                    textColor: Colors.red,
-                    label: Text('Sub'))
-              ],
-            ),
+            SizedBox(height: 20),
 
             //* Lightweight GetX, w/o init(consumes less memory)
-            Obx(() => Card(
-                    child: Column(
-                  children: [
-                    Text(
-                      'Product Title: ${productController.product.value.title}',
-                      style: kBoldText,
-                    ),
-                    Text(
-                      'Product Price: ${productController.product.value.price}',
-                      style: kBoldText,
-                    ),
-                  ],
-                )))
+            Obx(
+              () => Column(
+                children: [
+                  Text(
+                    'Product Title: ${productController.product.value.title}',
+                    style: kBoldText,
+                  ),
+                  Text(
+                    'Product Price: ${productController.product.value.price}',
+                    style: kBoldText,
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

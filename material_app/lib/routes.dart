@@ -25,7 +25,12 @@ class AppRoutes {
     GetPage(
         name: GridViewBuilderDemo.routeName, page: () => GridViewBuilderDemo()),
     GetPage(name: GetScreen.routeName, page: () => GetScreen()),
-    GetPage(name: GetDemo.routeName, page: () => GetDemo(), binding: MyBind()),
+    //* binding to a route
+    GetPage(
+      name: GetDemo.routeName,
+      page: () => GetDemo(),
+      binding: MyBind(),
+    ),
     GetPage(name: HomeScreen.routeName, page: () => HomeScreen()),
     GetPage(name: HttpDemo.routeName, page: () => HttpDemo()),
     GetPage(name: HandlingTaps.routeName, page: () => HandlingTaps()),
