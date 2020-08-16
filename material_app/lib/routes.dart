@@ -48,6 +48,8 @@ class AppRoutes {
     GetPage(name: SlidersDemo.routeName, page: () => SlidersDemo()),
     GetPage(name: TodoScreen.routeName, page: () => TodoScreen()),
     GetPage(name: StackWidget.routeName, page: () => StackWidget()),
-    GetPage(name: TabBarDemo.routeName, page: () => TabBarDemo())
+    GetPage(name: TabBarDemo.routeName, page: () => TabBarDemo()),
+    GetPage(
+        name: AutoCompleteScreen.routeName, page: () => AutoCompleteScreen()),
   ];
 }
