@@ -10,3 +10,4 @@ export 'animations_screen.dart';
 export 'maps_screen.dart';
 export 'auth_screen.dart';
 export 'autocomplete_screen.dart';
+export 'test_screen.dart';

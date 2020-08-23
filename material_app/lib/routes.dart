@@ -32,6 +32,7 @@ class AppRoutes {
       binding: MyBind(),
     ),
     GetPage(name: HomeScreen.routeName, page: () => HomeScreen()),
+    GetPage(name: TestScreen.routeName, page: () => TestScreen()),
     GetPage(name: HttpDemo.routeName, page: () => HttpDemo()),
     GetPage(name: HandlingTaps.routeName, page: () => HandlingTaps()),
     GetPage(

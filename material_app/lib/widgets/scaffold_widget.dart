@@ -40,6 +40,7 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
     {'HTTP Demo': HttpDemo.routeName},
     {'Auth Demo': AuthScreen.routeName},
     {'Animations': AnimationsScreen.routeName},
+    {'Test Screen': TestScreen.routeName},
     {'Get Demo': GetDemo.routeName},
     {'Todo App': TodoScreen.routeName},
     {'Listview': ListViewBuilderDemo.routeName},
