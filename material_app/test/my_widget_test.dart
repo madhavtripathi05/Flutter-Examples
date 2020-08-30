@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/material.dart';
-import '../lib/screens/test_screen.dart';
+import '../lib/screens/screens.dart';
 
 void main() {
   testWidgets('There should be a Widget with the name provided in TextField',

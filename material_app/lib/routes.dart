@@ -1,9 +1,7 @@
 import 'package:material_app/controllers/bindings/my_bind.dart';
+import 'package:get/get.dart';
 
 import './screens/screens.dart';
-import './widgets/widgets.dart';
-
-import 'package:get/get.dart';
 
 class AppRoutes {
   static final routes = [
@@ -17,7 +15,6 @@ class AppRoutes {
     GetPage(name: AsyncAwait.routeName, page: () => AsyncAwait()),
     GetPage(name: AuthScreen.routeName, page: () => AuthScreen()),
     GetPage(name: ButtonsDemo.routeName, page: () => ButtonsDemo()),
-    GetPage(name: BlocLogin.routeName, page: () => BlocLogin()),
     GetPage(
         name: ConfirmationAcknowledgement.routeName,
         page: () => ConfirmationAcknowledgement()),

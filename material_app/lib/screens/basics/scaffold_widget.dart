@@ -1,8 +1,8 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-import '../screens/screens.dart';
-import '../widgets/widgets.dart';
+import '../screens.dart';
+import '../../screens/screens.dart';
 
 class ScaffoldWidget extends StatefulWidget {
   static const routeName = '/scaffold-widget';

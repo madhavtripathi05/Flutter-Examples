@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../models/product.dart';
-import 'package:dartx/dartx.dart';
 
 class ProductController extends GetxController {
   //* Reactive Model (RxProduct)
@@ -33,11 +32,11 @@ class ProductController extends GetxController {
 
     //* Anti DDos - Called every time the user stops typing for 1 second
     debounce(product, (_) => print('got product: ${_.title} after 1 second'),
-        time: 1.seconds);
+        time: Duration(seconds: 1));
 
     //* Ignore all changes within 1 second.
     interval(product, (_) => print('ignored product: ${_.title}'),
-        time: 1.seconds);
+        time: Duration(seconds: 1));
 
     super.onInit();
   }

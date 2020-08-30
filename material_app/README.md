@@ -1,47 +1,45 @@
-# Example App built for exploring Flutter
-by [Flutter Coders](https://www.instagram.com/flutter_coders/)
+### Example App built for exploring Flutter
+### by [Flutter Coders](https://www.instagram.com/flutter_coders)
 
-# Some Screenshots:
-<img src="https://github.com/madhavtripathi05/Flutter-Examples/blob/master/material_app/screenshots/flutter_01.png" width="368" height="800" />
-<img src="https://github.com/madhavtripathi05/Flutter-Examples/blob/master/material_app/screenshots/flutter_02.png" width="368" height="800" />
-<img src="https://github.com/madhavtripathi05/Flutter-Examples/blob/master/material_app/screenshots/flutter_03.png" width="368" height="800" />
+</br>
 
-![ss5 gif][ss5]
+### List of Stuff Explored
 
-[ss5]:https://github.com/madhavtripathi05/Flutter-Examples/blob/master/material_app/screenshots/scaffold_example.gif "Scaffold Demo5"
-
-# List of Stuff Explored
-
-- [x] Animations
-- [x] Async Programming
-- [x] BottomNavigationBar
-- [x] BottomSheet
-- [x] Buttons
-- [x] Bloc (WIP)
-- [x] Card
-- [x] CircleAvatar
-- [x] Column
-- [x] Forms
-- [x] Futures
-- [x] Fetching Data using http
-- [x] GridView
-- [x] Gesture Detector
-- [x] InkWell
-- [x] ListView
-- [x] Navigation (basics)
-- [x] Navigation Rail
-- [x] Row
-- [x] Scaffold
-- [x] Shared Preferences
-- [x] Sliders
-- [x] Snackbar
-- [x] Sqflite
-- [x] Stack
-- [x] Streams
+- [x] [Animations](lib/screens/animations/animations_screen.dart)
+- [x] [Async Programming](lib/screens/async/async_await.dart)
+- [x] [BottomNavigationBar](lib/screens/basics/scaffold_widget.dart)
+- [x] [BottomSheet](lib/screens/confirmation/confirmation_acknowledgement.dart)
+- [x] [Buttons](lib/screens/basics/buttons_demo.dart)
+- [x] [Card](lib/screens/basics/row_column.dart)
+- [x] [CircleAvatar](lib/screens/basics/row_column.dart)
+- [x] [Column](lib/screens/basics/row_column.dart)
+- [x] [Forms](lib/screens/forms/form_demo.dart)
+- [x] [FirebaseCore](lib/screens/firebase/init_firebase.dart)
+- [ ] [FirebaseAuth](lib/screens/firebase/)
+- [ ] [FirebaseStorage](lib/screens/firebase/)
+- [ ] [FirebaseFirestore](lib/screens/firebase/)
+- [ ] [FirebaseDatabase](lib/screens/firebase/)
+- [x] [Futures](lib/screens/firebase/init_firebase.dart)
+- [x] [Fetching Data using http](lib/screens/http/http_demo.dart)
+- [x] [GridView](lib/screens/gridview/gridview_builder.dart)
+- [x] [GestureDetector](lib/screens/basics/handling_taps.dart)
+- [x] [Get](lib/screens/get/get_demo.dart)
+- [x] [InkWell](lib/screens/basics/handling_taps.dart)
+- [x] [ListView](lib/screens/listview/listview_builder.dart)
+- [x] [Navigation](lib/screens/app_screens/home_screen.dart)
+- [x] [NavigationRail](lib/screens/navigation_rail/navigation_rail_demo.dart)
+- [x] [Row](lib/screens/basics/row_column.dart)
+- [x] [Scaffold](lib/screens/screens/basics/scaffold_widget.dart)
+- [x] [SharedPreferences](lib/screens/shared_prefs/shared_prefs_demo.dart)
+- [x] [Sliders](lib/screens/basics/sliders_demo.dart)
+- [x] [Snackbar](lib/screens/confirmation/confirmation_acknowledgement.dart)
+- [x] [Sqflite](lib/screens/todo/todo_screen.dart)
+- [x] [Stack](lib/screens/basics/stack_widget.dart)
+- [x] [Streams](lib/screens/streams/stream_demo.dart)
+- [x] [Unit Test](test/unit_test.dart)
+- [x] [Widget Test](test/my_widget_test.dart)
 
 ## Getting Started
-
-This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
 

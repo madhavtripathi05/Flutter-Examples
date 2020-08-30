@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:material_app/controllers/product_controller.dart';
-import '../controllers/my_controller.dart';
-import '../constants.dart';
-import './get_screen.dart';
+import 'package:material_app/controllers/my_controller.dart';
+import 'package:material_app/constants.dart';
+import 'get_screen.dart';
 
 /*
  * Multiple Ways to use Get State Manager:

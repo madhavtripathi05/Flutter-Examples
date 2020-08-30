@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:animations/animations.dart';
+// import 'package:animations/animations.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:material_app/screens/screen1.dart';
+import '../screens.dart';
 
 class AnimationsScreen extends StatefulWidget {
   static const routeName = '/animations-screen';
@@ -30,8 +30,7 @@ class _AnimationsScreenState extends State<AnimationsScreen>
   void initState() {
     super.initState();
     //* Defines duration of animation and when to start, stop or restart.
-    objController =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 900));
+    objController = AnimationController(duration: Duration(milliseconds: 900));
 
     //* Tween(short for 'between') describes a Range
     //* of values that our obj will animate on.
@@ -41,10 +40,10 @@ class _AnimationsScreenState extends State<AnimationsScreen>
     ));
 
     opacityController =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 900));
+        AnimationController(duration: Duration(milliseconds: 900));
 
     sideObjController =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 900));
+        AnimationController(duration: Duration(milliseconds: 900));
 
     sideObjAnimation = Tween(begin: 0.0, end: -150.0).animate(
         CurvedAnimation(parent: sideObjController, curve: Curves.decelerate));
@@ -96,43 +95,43 @@ class _AnimationsScreenState extends State<AnimationsScreen>
           //* if you're planning to make simple animations for page
           //* Transitions, check this package called "animations".
           //* it's very simple to use:
-          OpenContainer(
-            transitionDuration: Duration(seconds: 1),
-            //* Widget before animation:
-            closedBuilder: (context, action) => FlatButton(
-                onPressed: () => action(), child: Text('Open Container')),
-            //! Use this only for Page transitions
-            //* Screen which will opened after animation.
-            openBuilder: (context, action) => Screen1(),
-          ),
+          // OpenContainer(
+          //   transitionDuration: Duration(seconds: 1),
+          //   //* Widget before animation:
+          //   closedBuilder: (context, action) => FlatButton(
+          //       onPressed: () => action(), child: Text('Open Container')),
+          //   //! Use this only for Page transitions
+          //   //* Screen which will opened after animation.
+          //   openBuilder: (context, action) => Screen1(),
+          // ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           //* this package also has Fade Animation for Alerts
-          showModal(
-              configuration: FadeScaleTransitionConfiguration(
-                  transitionDuration: Duration(seconds: 1)),
-              context: context,
-              builder: (ctx) {
-                return AlertDialog(
-                  content: Text('Fade Scale Transition'),
-                  actions: <Widget>[
-                    FlatButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: Text('Cancel'),
-                    ),
-                    FlatButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: Text('Okay'),
-                    ),
-                  ],
-                );
-              });
+          // showModal(
+          //     configuration: FadeScaleTransitionConfiguration(
+          //         transitionDuration: Duration(seconds: 1)),
+          //     context: context,
+          //     builder: (ctx) {
+          //       return AlertDialog(
+          //         content: Text('Fade Scale Transition'),
+          //         actions: <Widget>[
+          //           FlatButton(
+          //             onPressed: () {
+          //               Navigator.of(context).pop();
+          //             },
+          //             child: Text('Cancel'),
+          //           ),
+          //           FlatButton(
+          //             onPressed: () {
+          //               Navigator.of(context).pop();
+          //             },
+          //             child: Text('Okay'),
+          //           ),
+          //         ],
+          //       );
+          //     });
         },
         child: Icon(FlutterIcons.open_in_app_mco),
       ),

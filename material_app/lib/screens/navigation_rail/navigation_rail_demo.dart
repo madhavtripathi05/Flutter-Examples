@@ -85,7 +85,6 @@ class _NavigationRailDemoState extends State<NavigationRailDemo> {
 
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: items[_index].values.first,
       body: SafeArea(

@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_typeahead/cupertino_flutter_typeahead.dart';
-import '../services/countries_service.dart';
+import '../../services/countries_service.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:flutter/cupertino.dart';
 
 class AutoCompleteScreen extends StatelessWidget {
   //* create a text editing controller
   final countryController = TextEditingController();
-
-  final CupertinoSuggestionsBoxController _suggestionsBoxController =
-      CupertinoSuggestionsBoxController();
 
   static const routeName = '/auto-complete-screen';
   @override

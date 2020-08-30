@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../data/data.dart';
+import '../../data/data.dart';
 
 class ListViewBuilderDemo extends StatefulWidget {
   static const routeName = '/list-view';

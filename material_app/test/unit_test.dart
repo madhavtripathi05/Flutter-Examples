@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import '../lib/screens/test_screen.dart';
+import '../lib/screens/screens.dart';
 
 //* writing a simple unit test
 void main() {
