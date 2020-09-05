@@ -25,3 +25,5 @@ export 'navigation_rail/navigation_rail_demo.dart';
 export 'shared_prefs/shared_prefs_demo.dart';
 export 'streams/stream_demo.dart';
 export 'tab_bar/tab_bar.dart';
+export 'firebase/firebase_auth_screen.dart';
+export 'firebase/user_info.dart';

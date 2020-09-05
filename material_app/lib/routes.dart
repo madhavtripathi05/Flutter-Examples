@@ -20,6 +20,10 @@ class AppRoutes {
         page: () => ConfirmationAcknowledgement()),
     GetPage(name: FormsDemo.routeName, page: () => FormsDemo()),
     GetPage(
+        name: FirebaseAuthScreen.routeName, page: () => FirebaseAuthScreen()),
+    GetPage(name: UserInfo.routeName, page: () => UserInfo()),
+    GetPage(name: FormsDemo.routeName, page: () => FormsDemo()),
+    GetPage(
         name: GridViewBuilderDemo.routeName, page: () => GridViewBuilderDemo()),
     GetPage(name: GetScreen.routeName, page: () => GetScreen()),
     //* binding to a route

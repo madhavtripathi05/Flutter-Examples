@@ -42,7 +42,7 @@ class ProductController extends GetxController {
   }
 
   @override
-  void onClose() {
+  Future<void> onClose() async {
     //* onClose is called when this controller is removed
     //* from the memory, dispose off your streams here.
     titleController?.dispose();

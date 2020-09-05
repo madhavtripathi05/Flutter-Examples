@@ -34,6 +34,7 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
     {'Shared Prefs Demo': SharedPrefsDemo.routeName},
     {'Navigation Demo': HomeScreen.routeName},
     {'Handling Taps': HandlingTaps.routeName},
+    {'Firebase Auth': FirebaseAuthScreen.routeName},
     {'Stream Demo': StreamDemo.routeName},
     {'TabBar Demo': TabBarDemo.routeName},
     {'Google Maps': MapsScreen.routeName},
@@ -79,16 +80,26 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
           child: Column(
             children: <Widget>[
               for (var i = 0; i < titles.length; i++) ...[
-                FlatButton(
-                  // padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  color: myColor,
-                  textColor: Colors.white,
-                  onPressed: () =>
-                      Navigator.pushNamed(context, titles[i].values.first),
-                  child: Text(
+                // FlatButton(
+                //   // padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                //   color: myColor,
+                //   textColor: Colors.white,
+                //   onPressed: () =>
+                //       Navigator.pushNamed(context, titles[i].values.first),
+                //   child: Text(
+                //     titles[i].keys.first,
+                //     textAlign: TextAlign.center,
+                //   ),
+                // ),
+                ListTile(
+                  title: Text(
                     titles[i].keys.first,
                     textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.white),
                   ),
+                  tileColor: colors[Random().nextInt(colors.length)],
+                  onTap: () =>
+                      Navigator.pushNamed(context, titles[i].values.first),
                 ),
               ],
               SizedBox(height: 30)
