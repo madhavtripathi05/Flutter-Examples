@@ -24,7 +24,6 @@ class FirebaseAuthService {
     try {
       UserCredential userCred = await auth.createUserWithEmailAndPassword(
           email: email, password: pass);
-
       print(userCred.user.uid);
     } on FirebaseAuthException catch (e) {
       //* also you can handle some exceptions
@@ -64,7 +63,7 @@ class FirebaseAuthService {
   }
 
   //* sign out current logged in user
-  Future<void> signOut() async => await FirebaseAuth.instance.signOut();
+  Future<void> signOut() async => await auth.signOut();
 
   //* Google sign in
   //* don't forget to add google_sign_in dependency in pubspec

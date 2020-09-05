@@ -1,5 +1,5 @@
 ### Example App built for exploring Flutter
-### by [Flutter Coders](https://www.instagram.com/flutter_coders)
+##### by [Flutter Coders](https://www.instagram.com/flutter_coders)
 
 </br>
 
@@ -15,7 +15,7 @@
 - [x] [Column](lib/screens/basics/row_column.dart)
 - [x] [Forms](lib/screens/forms/form_demo.dart)
 - [x] [FirebaseCore](lib/screens/firebase/init_firebase.dart)
-- [ ] [FirebaseAuth](lib/screens/firebase/)
+- [x] [FirebaseAuth](lib/screens/firebase/firebase_auth_screen.dart)
 - [ ] [FirebaseStorage](lib/screens/firebase/)
 - [ ] [FirebaseFirestore](lib/screens/firebase/)
 - [ ] [FirebaseDatabase](lib/screens/firebase/)

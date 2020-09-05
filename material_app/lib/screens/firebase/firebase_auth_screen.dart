@@ -24,8 +24,7 @@ class _FirebaseAuthScreenState extends State<FirebaseAuthScreen> {
   void initState() {
     authService.getUser.isNull
         ? print('authentication required ')
-        : Future.delayed(
-            Duration(milliseconds: 0), () => Get.toNamed('/user-info'));
+        : Get.toNamed('/user-info');
     super.initState();
   }
 
@@ -53,13 +52,16 @@ class _FirebaseAuthScreenState extends State<FirebaseAuthScreen> {
               onPressed: () async {
                 loading = true;
                 setState(() {});
-                await authService.signInAnonymously();
+                if (GetPlatform.isWeb)
+                  await authService.signInWithGoogleWeb();
+                else
+                  await authService.signInWithGoogle();
                 loading = false;
                 setState(() {});
                 Get.toNamed('/user-info');
               },
-              icon: Icon(FlutterIcons.guest_zoc),
-              label: Text('Anonymous sign in'),
+              icon: Icon(FlutterIcons.google__ent),
+              label: Text('Google sign in'),
             ),
             FlatButton.icon(
               onPressed: () => getDialog('sign up'),
@@ -70,6 +72,18 @@ class _FirebaseAuthScreenState extends State<FirebaseAuthScreen> {
               onPressed: () => getDialog('login'),
               icon: Icon(FlutterIcons.email_ent),
               label: Text('Sign in using Email'),
+            ),
+            FlatButton.icon(
+              onPressed: () async {
+                loading = true;
+                setState(() {});
+                await authService.signInAnonymously();
+                loading = false;
+                setState(() {});
+                Get.toNamed('/user-info');
+              },
+              icon: Icon(FlutterIcons.guest_zoc),
+              label: Text('Anonymous sign in'),
             ),
           ],
         ),
@@ -92,11 +106,13 @@ class _FirebaseAuthScreenState extends State<FirebaseAuthScreen> {
                 Text('Enter your Email'),
                 TextFormField(
                     controller: emailController,
+                    keyboardType: TextInputType.emailAddress,
                     validator: (val) =>
                         GetUtils.isEmail(val) ? null : 'enter a valid email'),
                 SizedBox(height: 20),
                 Text('Enter a password'),
                 TextFormField(
+                    obscureText: true,
                     controller: passController,
                     validator: (val) =>
                         val.length > 6 ? null : 'enter a valid pass'),

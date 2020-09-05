@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'package:animations/animations.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import '../screens.dart';
 
 class AnimationsScreen extends StatefulWidget {
   static const routeName = '/animations-screen';

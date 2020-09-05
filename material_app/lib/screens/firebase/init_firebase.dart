@@ -10,7 +10,8 @@ class InitFirebaseApp extends StatelessWidget {
       future: Firebase.initializeApp(),
       builder: (context, snapshot) {
         if (snapshot.hasError)
-          return Center(child: Icon(FlutterIcons.error_mdi));
+          return MaterialApp(
+              home: Center(child: Text('Error:${snapshot.error}')));
 
         if (snapshot.connectionState == ConnectionState.done) return MyApp();
 

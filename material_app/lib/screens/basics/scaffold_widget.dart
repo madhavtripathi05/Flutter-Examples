@@ -1,8 +1,8 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../screens.dart';
-import '../../screens/screens.dart';
 
 class ScaffoldWidget extends StatefulWidget {
   static const routeName = '/scaffold-widget';
@@ -26,6 +26,7 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
   ];
   int counter = 0;
   int selectedIndex = 0;
+  bool view = false;
   List<Map<String, String>> titles = [
     {'Navigation Rail Demo': NavigationRailDemo.routeName},
     {'Async/Await/Future': AsyncAwait.routeName},
@@ -51,13 +52,16 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
     {'Stack': StackWidget.routeName},
     {'Form': FormsDemo.routeName},
   ];
-  void changeColor() =>
-      setState(() => myColor = colors[Random().nextInt(colors.length)]);
+  void changeColor() => setState(() {
+        myColor = colors[Random().nextInt(colors.length)];
+        view = !view;
+      });
   void increment() => setState(() => counter++);
   void decrement() => setState(() => counter > 0 ? counter-- : null);
 
   @override
   Widget build(BuildContext context) {
+    print(Get.height);
     return Scaffold(
       /*top area of your app where you can provide different things like 
       title of app, set custom actions*/
@@ -75,38 +79,7 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
           ),
         ],
       ),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              for (var i = 0; i < titles.length; i++) ...[
-                // FlatButton(
-                //   // padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                //   color: myColor,
-                //   textColor: Colors.white,
-                //   onPressed: () =>
-                //       Navigator.pushNamed(context, titles[i].values.first),
-                //   child: Text(
-                //     titles[i].keys.first,
-                //     textAlign: TextAlign.center,
-                //   ),
-                // ),
-                ListTile(
-                  title: Text(
-                    titles[i].keys.first,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  tileColor: colors[Random().nextInt(colors.length)],
-                  onTap: () =>
-                      Navigator.pushNamed(context, titles[i].values.first),
-                ),
-              ],
-              SizedBox(height: 30)
-            ],
-          ),
-        ),
-      ),
+      body: view ? buildListView() : buildGridView(),
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
@@ -159,7 +132,6 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
         IconButton(
             icon: Icon(Icons.remove),
             onPressed: () {
-              changeColor();
               decrement();
             },
             color: myColor),
@@ -167,7 +139,6 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
         IconButton(
             icon: Icon(Icons.add),
             onPressed: () {
-              changeColor();
               increment();
             },
             color: myColor),
@@ -176,7 +147,6 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
           selectedItemColor: myColor,
           onTap: (val) {
             setState(() => selectedIndex = val);
-            changeColor();
           },
           unselectedItemColor: Colors.grey,
           currentIndex: selectedIndex,
@@ -193,5 +163,50 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
                 title: Text('action 5'), icon: Icon(Icons.account_circle)),
           ]),
     );
+  }
+
+  Widget buildListView() {
+    return ListView(
+      children: <Widget>[
+        for (var i = 0; i < titles.length; i++) ...[
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListTile(
+              title: Text(
+                titles[i].keys.first,
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white),
+              ),
+              tileColor: colors[Random().nextInt(colors.length)],
+              onTap: () => Navigator.pushNamed(context, titles[i].values.first),
+            ),
+          ),
+        ],
+        SizedBox(height: 30)
+      ],
+    );
+  }
+
+  Widget buildGridView() {
+    return GridView.builder(
+        itemCount: titles.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: Get.width > 600 ? 4 : 2, childAspectRatio: 1.3),
+        itemBuilder: (ctx, i) {
+          return GestureDetector(
+            onTap: () => Navigator.pushNamed(context, titles[i].values.first),
+            child: Container(
+              margin: EdgeInsets.all(8),
+              color: colors[Random().nextInt(colors.length)],
+              child: Center(
+                child: Text(
+                  titles[i].keys.first,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+          );
+        });
   }
 }
