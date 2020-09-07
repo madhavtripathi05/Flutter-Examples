@@ -52,6 +52,14 @@ class FirebaseAuthService {
     }
   }
 
+  Future<void> updateUserEmail(String newEmail, String email, String pass) {
+    return auth
+        .signInWithEmailAndPassword(email: email, password: pass)
+        .then((userCred) {
+      userCred.user.updateEmail(newEmail);
+    });
+  }
+
   //* deleting a user
   Future<void> deleteUser(User user) async {
     try {

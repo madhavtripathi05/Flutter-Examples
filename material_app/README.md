@@ -1,8 +1,8 @@
-### Example App built for exploring Flutter
+#### Example App built for exploring Flutter
 ##### by [Flutter Coders](https://www.instagram.com/flutter_coders)
+A PWA(beta) is also available [here](https://bit.ly/fc-example)
 
 </br>
-
 ### List of Stuff Explored
 
 - [x] [Animations](lib/screens/animations/animations_screen.dart)
