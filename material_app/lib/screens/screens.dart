@@ -27,3 +27,4 @@ export 'streams/stream_demo.dart';
 export 'tab_bar/tab_bar.dart';
 export 'firebase/firebase_auth_screen.dart';
 export 'firebase/user_info.dart';
+export 'firebase/students_list.dart';

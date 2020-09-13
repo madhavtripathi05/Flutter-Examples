@@ -34,6 +34,7 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
     {'Autocomplete Demo': AutoCompleteScreen.routeName},
     {'Shared Prefs Demo': SharedPrefsDemo.routeName},
     {'Navigation Demo': HomeScreen.routeName},
+    {'Firestore Demo': StudentsList.routeName},
     {'Handling Taps': HandlingTaps.routeName},
     {'Firebase Auth': FirebaseAuthScreen.routeName},
     {'Stream Demo': StreamDemo.routeName},

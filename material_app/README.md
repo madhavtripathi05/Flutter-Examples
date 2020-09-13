@@ -1,8 +1,11 @@
 #### Example App built for exploring Flutter
+
 ##### by [Flutter Coders](https://www.instagram.com/flutter_coders)
+
 A PWA(beta) is also available [here](https://bit.ly/fc-example)
 
 </br>
+
 ### List of Stuff Explored
 
 - [x] [Animations](lib/screens/animations/animations_screen.dart)
@@ -16,9 +19,12 @@ A PWA(beta) is also available [here](https://bit.ly/fc-example)
 - [x] [Forms](lib/screens/forms/form_demo.dart)
 - [x] [FirebaseCore](lib/screens/firebase/init_firebase.dart)
 - [x] [FirebaseAuth](lib/screens/firebase/firebase_auth_screen.dart)
+- [x] [FirebaseFirestore](lib/screens/firebase/students_list.dart)
 - [ ] [FirebaseStorage](lib/screens/firebase/)
-- [ ] [FirebaseFirestore](lib/screens/firebase/)
-- [ ] [FirebaseDatabase](lib/screens/firebase/)
+- [ ] [FirebaseAdmob](lib/screens/firebase/)
+- [ ] [FirebaseHosting](lib/screens/firebase/)
+- [ ] [FirebaseAnalytics](lib/screens/firebase/)
+- [ ] [FirebaseFunctions](lib/screens/firebase/)
 - [x] [Futures](lib/screens/firebase/init_firebase.dart)
 - [x] [Fetching Data using http](lib/screens/http/http_demo.dart)
 - [x] [GridView](lib/screens/gridview/gridview_builder.dart)

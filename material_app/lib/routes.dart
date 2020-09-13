@@ -47,6 +47,7 @@ class AppRoutes {
     GetPage(name: Screen2.routeName, page: () => Screen2()),
     GetPage(name: SharedPrefsDemo.routeName, page: () => SharedPrefsDemo()),
     GetPage(name: StreamDemo.routeName, page: () => StreamDemo()),
+    GetPage(name: StudentsList.routeName, page: () => StudentsList()),
     GetPage(name: SlidersDemo.routeName, page: () => SlidersDemo()),
     GetPage(name: TodoScreen.routeName, page: () => TodoScreen()),
     GetPage(name: StackWidget.routeName, page: () => StackWidget()),
