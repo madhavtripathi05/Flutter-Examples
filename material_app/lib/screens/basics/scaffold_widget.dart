@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:material_app/services/analytics_service.dart';
 
 import '../screens.dart';
 
@@ -62,7 +63,9 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
 
   @override
   Widget build(BuildContext context) {
-    print(Get.height);
+    //* Place this inside the 1st screen of your app:
+    AnalyticsService().appOpen();
+
     return Scaffold(
       /*top area of your app where you can provide different things like 
       title of app, set custom actions*/
@@ -153,15 +156,14 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
           currentIndex: selectedIndex,
           items: [
             BottomNavigationBarItem(
-                title: Text('action 1'), icon: Icon(Icons.android)),
+                label: 'action 1', icon: Icon(Icons.android)),
             BottomNavigationBarItem(
-                title: Text('action 2'), icon: Icon(Icons.touch_app)),
+                label: 'action 2', icon: Icon(Icons.touch_app)),
+            BottomNavigationBarItem(label: 'action 3', icon: Icon(Icons.work)),
             BottomNavigationBarItem(
-                title: Text('action 3'), icon: Icon(Icons.work)),
+                label: 'action 4', icon: Icon(Icons.whatshot)),
             BottomNavigationBarItem(
-                title: Text('action 4'), icon: Icon(Icons.whatshot)),
-            BottomNavigationBarItem(
-                title: Text('action 5'), icon: Icon(Icons.account_circle)),
+                label: 'action 5', icon: Icon(Icons.account_circle)),
           ]),
     );
   }

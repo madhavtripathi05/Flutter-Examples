@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:material_app/services/analytics_service.dart';
 import '../../services/countries_service.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:flutter/cupertino.dart';
@@ -54,6 +55,7 @@ class AutoCompleteScreen extends StatelessWidget {
                   //* assigning suggestion to countryController
                   onSuggestionSelected: (String suggestion) {
                     countryController.text = suggestion;
+                    AnalyticsService().logSearch(suggestion);
                   },
                 ),
               ),

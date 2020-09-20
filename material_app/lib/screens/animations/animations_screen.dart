@@ -29,7 +29,8 @@ class _AnimationsScreenState extends State<AnimationsScreen>
   void initState() {
     super.initState();
     //* Defines duration of animation and when to start, stop or restart.
-    objController = AnimationController(duration: Duration(milliseconds: 900));
+    objController =
+        AnimationController(duration: Duration(milliseconds: 900), vsync: this);
 
     //* Tween(short for 'between') describes a Range
     //* of values that our obj will animate on.
@@ -39,10 +40,10 @@ class _AnimationsScreenState extends State<AnimationsScreen>
     ));
 
     opacityController =
-        AnimationController(duration: Duration(milliseconds: 900));
+        AnimationController(duration: Duration(milliseconds: 900), vsync: this);
 
     sideObjController =
-        AnimationController(duration: Duration(milliseconds: 900));
+        AnimationController(duration: Duration(milliseconds: 900), vsync: this);
 
     sideObjAnimation = Tween(begin: 0.0, end: -150.0).animate(
         CurvedAnimation(parent: sideObjController, curve: Curves.decelerate));

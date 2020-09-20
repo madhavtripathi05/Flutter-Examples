@@ -18,6 +18,8 @@ environment:
 
 dependencies:
   firebase_core: ^0.5.0
+  firebase_analytics: ^6.0.0
+  cloud_functions: ^0.6.0
   cloud_firestore: ^0.14.0+2
   firebase_database: ^4.0.0
   firebase_auth: ^0.18.0+1

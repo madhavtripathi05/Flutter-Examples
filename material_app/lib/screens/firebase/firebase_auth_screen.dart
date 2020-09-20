@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:get/get.dart';
+import 'package:material_app/services/analytics_service.dart';
 import 'package:material_app/services/firebase_auth_service.dart';
 
 class FirebaseAuthScreen extends StatefulWidget {
@@ -12,6 +13,7 @@ class FirebaseAuthScreen extends StatefulWidget {
 class _FirebaseAuthScreenState extends State<FirebaseAuthScreen> {
   bool loading = false;
   final authService = FirebaseAuthService();
+  final analytics = AnalyticsService();
 
   @override
   void setState(fn) {
@@ -56,8 +58,15 @@ class _FirebaseAuthScreenState extends State<FirebaseAuthScreen> {
                   await authService.signInWithGoogleWeb();
                 else
                   await authService.signInWithGoogle();
+
+                await analytics.setUser(
+                    'user.uid', 'username', 'user.displayName');
+
+                await analytics.logLogin('Google sign-in');
+
                 loading = false;
                 setState(() {});
+
                 Get.toNamed('/user-info');
               },
               icon: Icon(FlutterIcons.google__ent),
@@ -75,6 +84,7 @@ class _FirebaseAuthScreenState extends State<FirebaseAuthScreen> {
             ),
             FlatButton.icon(
               onPressed: () async {
+                await analytics.logLogin('Anonymous');
                 loading = true;
                 setState(() {});
                 await authService.signInAnonymously();
@@ -133,6 +143,8 @@ class _FirebaseAuthScreenState extends State<FirebaseAuthScreen> {
 
                             loading = false;
                             setState(() {});
+
+                            await analytics.logSignUp('email');
                             Get.back();
                             Get.toNamed('/user-info');
                           }

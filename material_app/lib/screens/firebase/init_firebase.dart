@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter_icons/flutter_icons.dart';
+import 'package:flutter/material.dart';
 import 'package:material_app/widgets/my_app.dart';
 
 class InitFirebaseApp extends StatelessWidget {

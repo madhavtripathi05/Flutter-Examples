@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:material_app/routes.dart';
-import '../controllers/bindings/product_bind.dart';
-
-import '../screens/screens.dart';
-import '../utils/translations.dart';
-import '../constants.dart';
 import 'package:get/get.dart';
+import 'package:material_app/routes.dart';
 
-// just like every programming language, execution starts from main()
+import '../constants.dart';
+import '../controllers/bindings/product_bind.dart';
+import '../screens/screens.dart';
+import '../services/analytics_service.dart';
+import '../utils/translations.dart';
+
+// just like every programming language, execution starts from main
 
 class MyApp extends StatelessWidget {
   @override
@@ -41,6 +42,9 @@ class MyApp extends StatelessWidget {
 
       //* routes to different screens.
       getPages: AppRoutes.routes,
+
+      //* Inside Material App add this line to observe pages.
+      navigatorObservers: <NavigatorObserver>[AnalyticsService().observer],
 
       //* do something when a particular route is called.
       routingCallback: (routing) {
