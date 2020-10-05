@@ -87,6 +87,7 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
+            SizedBox(height: 20),
             CircleAvatar(
                 //adds a circular logo inside which you can add anything
                 child: FlutterLogo(),
@@ -172,16 +173,22 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
     return ListView(
       children: <Widget>[
         for (var i = 0; i < titles.length; i++) ...[
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ListTile(
-              title: Text(
-                titles[i].keys.first,
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white),
+          InkWell(
+            onTap: () => Navigator.pushNamed(context, titles[i].values.first),
+            child: Container(
+              height: 50,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(7),
+                color: colors[Random().nextInt(colors.length)],
               ),
-              tileColor: colors[Random().nextInt(colors.length)],
-              onTap: () => Navigator.pushNamed(context, titles[i].values.first),
+              margin: const EdgeInsets.all(8.0),
+              child: Center(
+                child: Text(
+                  titles[i].keys.first,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
             ),
           ),
         ],
@@ -200,7 +207,10 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
             onTap: () => Navigator.pushNamed(context, titles[i].values.first),
             child: Container(
               margin: EdgeInsets.all(8),
-              color: colors[Random().nextInt(colors.length)],
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(7),
+                color: colors[Random().nextInt(colors.length)],
+              ),
               child: Center(
                 child: Text(
                   titles[i].keys.first,
