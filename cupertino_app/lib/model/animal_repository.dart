@@ -22,7 +22,8 @@ class AnimalsRepository {
 
   static List<Animal> search(String name) {
     return animals
-            .where((a) => a.name.toLowerCase().contains(name.toLowerCase()))
+            .where((animal) =>
+                animal.name.toLowerCase().contains(name.toLowerCase()))
             .toList() ??
         [];
   }

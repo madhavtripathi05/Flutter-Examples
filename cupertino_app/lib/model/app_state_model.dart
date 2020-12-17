@@ -15,19 +15,15 @@ class AppStateModel extends ChangeNotifier {
   }
 
   List<Animal> animals;
-  List<Animal> searchResults;
   List<Animal> filteredAnimals;
 
   void loadAnimals() {
     animals = AnimalsRepository.animals;
     filteredAnimals = AnimalsRepository.animals;
-    searchResults = AnimalsRepository.animals;
     notifyListeners();
   }
 
-  List<Animal> searchAnimals(String name) {
-    return AnimalsRepository.search(name);
-  }
+  List<Animal> searchAnimals(String name) => AnimalsRepository.search(name);
 
   void addAnimal(String name, Category category) {
     AnimalsRepository.add(name, category);

@@ -12,21 +12,12 @@ class SearchTab extends StatefulWidget {
 
 class _SearchTabState extends State<SearchTab> {
   TextEditingController _controller;
-  FocusNode _focusNode;
   String _searchTerm = '';
 
   @override
   void initState() {
     super.initState();
     _controller = TextEditingController()..addListener(_onTextChanged);
-    _focusNode = FocusNode();
-  }
-
-  @override
-  void dispose() {
-    _focusNode.dispose();
-    _controller.dispose();
-    super.dispose();
   }
 
   void _onTextChanged() {
@@ -35,13 +26,16 @@ class _SearchTabState extends State<SearchTab> {
     });
   }
 
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   Widget _buildSearchBox() {
     return Padding(
       padding: const EdgeInsets.all(8),
-      child: SearchBar(
-        controller: _controller,
-        focusNode: _focusNode,
-      ),
+      child: SearchBar(controller: _controller),
     );
   }
 

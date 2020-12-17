@@ -2,13 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 
 class SearchBar extends StatelessWidget {
-  const SearchBar({
-    @required this.controller,
-    @required this.focusNode,
-  });
+  const SearchBar({this.controller});
 
   final TextEditingController controller;
-  final FocusNode focusNode;
 
   @override
   Widget build(BuildContext context) {
@@ -19,22 +15,13 @@ class SearchBar extends StatelessWidget {
       ),
       child: Row(
         children: [
-          const Icon(
-            CupertinoIcons.search,
-          ),
+          const Icon(CupertinoIcons.search),
           SizedBox(width: 8),
-          Expanded(
-            child: CupertinoTextField(
-              controller: controller,
-              focusNode: focusNode,
-            ),
-          ),
+          Expanded(child: CupertinoTextField(controller: controller)),
           SizedBox(width: 8),
           GestureDetector(
             onTap: controller.clear,
-            child: const Icon(
-              CupertinoIcons.clear_thick_circled,
-            ),
+            child: const Icon(CupertinoIcons.clear_thick_circled),
           ),
         ],
       ),

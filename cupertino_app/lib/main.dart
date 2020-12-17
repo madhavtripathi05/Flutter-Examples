@@ -19,10 +19,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final state = Provider.of<AppStateModel>(context);
     return CupertinoApp(
+      theme: state.getTheme(),
       title: 'Animals',
       debugShowCheckedModeBanner: false,
       home: HomePage(),
-      theme: state.getTheme(),
     );
   }
 }
