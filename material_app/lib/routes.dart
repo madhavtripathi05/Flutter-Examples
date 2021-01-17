@@ -12,6 +12,7 @@ class AppRoutes {
       //* You can customize transition for different screens
       transition: Transition.zoom,
     ),
+    GetPage(name: ArCoreScreen.routeName, page: () => ArCoreScreen()),
     GetPage(name: AsyncAwait.routeName, page: () => AsyncAwait()),
     GetPage(name: AuthScreen.routeName, page: () => AuthScreen()),
     GetPage(name: ButtonsDemo.routeName, page: () => ButtonsDemo()),
@@ -33,6 +34,7 @@ class AppRoutes {
       binding: MyBind(),
     ),
     GetPage(name: HomeScreen.routeName, page: () => HomeScreen()),
+    GetPage(name: InstaDetails.routeName, page: () => InstaDetails()),
     GetPage(name: TestScreen.routeName, page: () => TestScreen()),
     GetPage(name: HttpDemo.routeName, page: () => HttpDemo()),
     GetPage(name: HandlingTaps.routeName, page: () => HandlingTaps()),
