@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:insta_public_api/insta_public_api.dart';
@@ -31,6 +32,7 @@ class _InstaDetailsState extends State<InstaDetails> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('Example App'),
+        centerTitle: true,
         actions: [
           IconButton(
               icon: Icon(Icons.search),
@@ -110,8 +112,8 @@ class _InstaDetailsState extends State<InstaDetails> {
                                               padding: EdgeInsets.symmetric(
                                                   vertical: 10),
                                               child: ClipRRect(
-                                                child: Image.network(
-                                                  i.displayUrl,
+                                                child: CachedNetworkImage(
+                                                  imageUrl: i.displayUrl,
                                                   fit: BoxFit.cover,
                                                 ),
                                                 borderRadius: p.images.first ==
@@ -137,7 +139,8 @@ class _InstaDetailsState extends State<InstaDetails> {
                                           .toList()
                                     ])
                               : ClipRRect(
-                                  child: Image.network(p.displayUrl,
+                                  child: CachedNetworkImage(
+                                      imageUrl: p.displayUrl,
                                       fit: BoxFit.cover),
                                   borderRadius: BorderRadius.circular(10)),
                         ),
@@ -147,14 +150,14 @@ class _InstaDetailsState extends State<InstaDetails> {
                         children: [
                           Icon(Icons.favorite_border_rounded,
                               color: Colors.red),
-                          Text(' ${p.likes}'),
+                          makeText(' ${p.likes}'),
                           SizedBox(width: 10),
                           Icon(Icons.comment, color: Colors.blue),
-                          Text(' ${p.comments}'),
+                          makeText(' ${p.comments}'),
                         ],
                       ),
                       SizedBox(height: 20),
-                      Text('${p.caption}')
+                      makeText('${p.caption}')
                     ],
                   ),
                 )

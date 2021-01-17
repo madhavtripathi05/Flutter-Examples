@@ -20,6 +20,7 @@ dependencies:
   flutter:
     sdk: flutter
   arcore_flutter_plugin: ^0.0.10
+  cached_network_image: ^2.5.0
   cloud_firestore: ^0.14.0+2
   cloud_functions: ^0.6.0+1
   cupertino_icons: ^0.1.2
